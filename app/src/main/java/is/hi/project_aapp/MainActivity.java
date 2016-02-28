@@ -23,8 +23,12 @@ public class MainActivity extends AppCompatActivity {
         OMGOMGMGOGMGOMGOGMGOMG
         moooothafokkkkkker
 
+        PENIS
+
          */
 
+
+        //ogmdajgfdsakljfdsoafmodsmgomdsoag
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
