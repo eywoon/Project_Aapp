@@ -1,4 +1,4 @@
-package is.hi.project_aapp.SQL;
+package is.hi.project_aapp.Sponsor;
 
 /**
  * Created by hrefnaolafsdottir on 17/03/16.
