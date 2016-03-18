@@ -28,6 +28,7 @@ import android.renderscript.RenderScript;
 import android.support.annotation.Nullable;
 import android.view.Display;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.io.*;
 import java.util.Iterator;
@@ -40,20 +41,35 @@ import android.content.Context;
  * Created by Eyrun on 28/02/16.
  */
 public class TaskKeeper {
+    // þurfa töskin kannski að vera skilgreins sem eitthva fyrst sem er svo sett inn í arraylistann
+    // eins og kannski harðkóðað fylki sem er svo loopað í gegnum með put
 
+    private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
     //instance variables
     //hmap has a String key and keeps track of the Counter objects
     HashMap<String, Counter> hmap = new HashMap<String, Counter>();
     //Context has to come from the activity
     Context context;
+    private ArrayList<String> highPriorityTasks = new ArrayList<>();
+    private ArrayList<String> mediumPriorityTasks = new ArrayList<>();
+    private ArrayList<String> lowPriorityTasks = new ArrayList<>();
 
 
     public TaskKeeper(Context context) {
 
-        /*ATH, þetta er tótal bull */
-        hmap.put("vakna", new Counter(true, true, false));
-        hmap.put("sofa", new Counter(false, false, false));
-        hmap.put("tala", new Counter(true, true, true));
+        Counter c = new Counter();
+
+        for (int i = 0; i < 7; i++) {
+            c.addToDoneList(true);
+        }
+
+        hmap.put("randomGæi", c);
+
+    /*    for(int i = 0; i<= allTasks.length; i++) {
+            hmap.put(allTasks[i], new Counter());
+        } */
+
+
         this.context = context;
     }
 
@@ -91,11 +107,14 @@ public class TaskKeeper {
      * After: ?? has been deserialised into map??
      **/
     public void deSerialiseHashMap() {
+
+        //map is empty
         HashMap<Integer, String> map = null;
         String filename = "hashmap";
         try {
             FileInputStream fis = context.openFileInput(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
+            // read the object and cast to a hashmap (the aldready defined map)
             map = (HashMap) ois.readObject();
             ois.close();
             fis.close();
@@ -111,6 +130,8 @@ public class TaskKeeper {
         // Display content using Iterator
         Set set = map.entrySet();
         Iterator iterator = set.iterator();
+
+        //plokka upplýsingar út úr mappinu
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
             System.out.print("key: " + mentry.getKey() + " & Value: ");
@@ -120,6 +141,28 @@ public class TaskKeeper {
             System.out.println(c.getLast7Days());
 
         }
+    }
+
+    public void checkDaily() {
+        //TODO: send a push notification every day at a certain time
+    }
+
+    public void checkEveryThreeDays() {
+        //TODO: send a push notification every three days at a certain time
+    }
+
+    public void checkWeekly() {
+        //TODO: send a push notification every week at a certain time and day
+    }
+
+    public void sendNotification(String s) {
+        //TODO: send a the push notification with the relevant string (time is already determined in each individual check method
+
+    }
+
+    public String getBackgroundColour() {
+        //TODO: colour is determined by the percentage of tasks finished that day
+        return "colour";
     }
 
 }
