@@ -1,4 +1,4 @@
-package is.hi.project_aapp.TaskManager;
+/*package is.hi.project_aapp.TaskManager;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -39,7 +39,7 @@ import android.content.Context;
 /**
  * Created by Eyrun on 28/02/16.
  */
-public class TaskKeeper {
+/*public class TaskKeeper {
 
     //instance variables
     //hmap has a String key and keeps track of the Counter objects
@@ -51,7 +51,7 @@ public class TaskKeeper {
     public TaskKeeper(Context context) {
 
         /*ATH, þetta er tótal bull */
-        hmap.put("vakna", new Counter(true, true, false));
+      /*  hmap.put("vakna", new Counter(true, true, false));
         hmap.put("sofa", new Counter(false, false, false));
         hmap.put("tala", new Counter(true, true, true));
         this.context = context;
@@ -61,7 +61,7 @@ public class TaskKeeper {
      * Before:
      * After: hmap has been serialised
      **/
-    public void serialiseHashMap() {
+    /*public void serialiseHashMap() {
 
         FileOutputStream fileOut;
         String filename = "hashmap";
@@ -70,7 +70,7 @@ public class TaskKeeper {
             /* For information: */
             //mode private = recreate the file even if it exists
             //mode append = if exists append to it, otherwise create it
-            fileOut = context.openFileOutput(filename, Context.MODE_PRIVATE);
+/*            fileOut = context.openFileOutput(filename, Context.MODE_PRIVATE);
 
             //ObjectOutputStream: Getur serialisað object (og primitive types) í þetta skiptið er það í file-inn
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -90,7 +90,7 @@ public class TaskKeeper {
      * Before: map is an empty hashmap
      * After: ?? has been deserialised into map??
      **/
-    public void deSerialiseHashMap() {
+  /*  public void deSerialiseHashMap() {
         HashMap<Integer, String> map = null;
         String filename = "hashmap";
         try {
@@ -123,3 +123,4 @@ public class TaskKeeper {
     }
 
 }
+*/
