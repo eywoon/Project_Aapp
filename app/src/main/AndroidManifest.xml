@@ -18,10 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
         <activity
             android:name=".Sponsor.SponsorActivity"
             android:label="@string/title_activity_sponsor"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>
