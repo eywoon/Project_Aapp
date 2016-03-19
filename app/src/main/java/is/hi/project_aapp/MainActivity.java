@@ -26,25 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onButton(View view) {
-        Intent intent = new Intent(this, TaskActivity.class);
-        startActivity(intent);
-    }
-
-        /*
-
-        OMGOMGMGOGMGOMGOGMGOMG
-        moooothafokkkkkker
-
-         */
 
 
 
 
-    }
 
-    public void onButton(View view){
-        Intent intent = new Intent(this, SponsorActivity.class);
-        startActivity(intent);
-    }
 
+}

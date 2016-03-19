@@ -45,7 +45,7 @@ public class TaskKeeper {
     // þurfa töskin kannski að vera skilgreins sem eitthva fyrst sem er svo sett inn í arraylistann
     // eins og kannski harðkóðað fylki sem er svo loopað í gegnum með put
 
-public class TaskKeeper {
+
 
 
     private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};

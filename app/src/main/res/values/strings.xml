@@ -1,10 +1,10 @@
 <resources>
-    <! main activity strings>
+
     <string name="app_name">Project_Aapp</string>
     <string name="action_settings">Settings</string>
-<<<<<<< HEAD
+
     <string name="welcome">Góðann Daginn</string>
-    <string name="name">Jón Halldór</string>
+    <string name="name">Jón Halldór Lofthæna Erling KlingenBerg</string>
     <string name="edru">Þú hefur verið edrú í </string>
     <string name="dagar">18 Mánuði og 10 Daga </string>
     <string name="tasks">Dagbók</string>
@@ -17,7 +17,7 @@
     <string name="goals">Markmið</string>
     <string name="help">Hjálp</string>
 
-    <! 12 steps strings>
+
     <string name="spor1">1. Við viðurkenndum vanmátt okkar gagnvart áfengi og að við gætum ekki lengur stjórnað eigin lífi.</string>
     <string name="spor2">2. Við fórum að trúa að máttur okkur æðri gæti gert okkur andlega heilbrigð að nýju.</string>
     <string name="spor3">3. Við tókum þá ákvörðun að fela líf okkar og vilja umsjá Guðs, samkvæmt skilningi okkar á honum.</string>
@@ -33,7 +33,7 @@
     <string name="spor12">12. Við urðum fyrir andlegri vakningu er við stigum þessi spor og reyndum því að flytja öðrum alkóhólistum þennan boðskap og fylgja þessum meginreglum í lífi okkar og starfi.</string>
 
 
-    <!about me strings>
+
     <string name = "aboutme1"></string>
 
     <string name="title_activity_task">TaskActivity</string>
