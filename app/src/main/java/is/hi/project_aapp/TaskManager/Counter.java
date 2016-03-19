@@ -69,7 +69,7 @@ public class Counter implements Serializable {
     //TODO það vantar að passa að doneTOday breytist alltaf á miðnætti, líklegast aðferð hér
     public void reset() {
         // kallað á úr taskkeeper, fyrir hvern key í hashmappinu
-
+        doneToday = false;
     }
 
 }

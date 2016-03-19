@@ -77,7 +77,7 @@ public class TaskKeeper {
      * Before:
      * After: hmap has been serialised
      **/
-    public void serialiseHashMap() {
+    public void serialiseHashMap(HashMap newMap) {
 
         FileOutputStream fileOut;
         String filename = "hashmap";
@@ -91,7 +91,7 @@ public class TaskKeeper {
             //ObjectOutputStream: Getur serialisað object (og primitive types) í þetta skiptið er það í file-inn
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             // writeObject: Writes an object to the target stream.
-            out.writeObject(hmap);
+            out.writeObject(newMap);
             //closes the stream
             out.close();
             //closes the FileOutPutStream
@@ -106,7 +106,7 @@ public class TaskKeeper {
      * Before: map is an empty hashmap
      * After: ?? has been deserialised into map??
      **/
-    public void deSerialiseHashMap() {
+    public HashMap deSerialiseHashMap() {
 
         //map is empty
         HashMap<Integer, String> map = null;
@@ -120,11 +120,11 @@ public class TaskKeeper {
             fis.close();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            return;
+            return map;
         } catch (ClassNotFoundException c) {
             System.out.println("Class not found");
             c.printStackTrace();
-            return;
+            return map;
         }
         System.out.println("Deserialized HashMap..");
         // Display content using Iterator
@@ -139,8 +139,8 @@ public class TaskKeeper {
             System.out.println("Valúið er: " + map.get(mentry.getValue()));
             Counter c = (Counter) mentry.getValue();
             System.out.println(c.getLast7Days());
-
         }
+        return map;
     }
 
     public void checkDaily() {
