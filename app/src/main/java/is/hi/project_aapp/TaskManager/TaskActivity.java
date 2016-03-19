@@ -39,7 +39,7 @@ public class TaskActivity extends AppCompatActivity {
 
         HashMap hmap = tk.deSerialiseHashMap();
         // tk.deSerialiseHashMap();
-
+//lalal
         Counter c = new Counter();
         c = (Counter) hmap.get("randomGæi");
         c.addToDoneList(false);
