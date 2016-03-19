@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Project_Aapp</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="title_activity_task">TaskActivity</string>
+=======
+    <string name="title_activity_sponsor">SponsorActivity</string>
+>>>>>>> 331ab046767a64fbc32aa1fa6082e0bcf7309fcf
 </resources>

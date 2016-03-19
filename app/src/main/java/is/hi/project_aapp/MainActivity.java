@@ -10,8 +10,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+
 import is.hi.project_aapp.TaskManager.TaskActivity;
+
 import is.hi.project_aapp.TaskManager.TaskKeeper;
+import is.hi.project_aapp.Sponsor.SponsorActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,10 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
          */
 
-  /*      TaskKeeper tk = new TaskKeeper(getApplicationContext());
-        tk.serialiseHashMap();
-        tk.deSerialiseHashMap();
- */
 
+
+
+    }
+
+    public void onButton(View view){
+        Intent intent = new Intent(this, SponsorActivity.class);
+        startActivity(intent);
     }
 

@@ -40,9 +40,13 @@ import android.content.Context;
 /**
  * Created by Eyrun on 28/02/16.
  */
+
 public class TaskKeeper {
     // þurfa töskin kannski að vera skilgreins sem eitthva fyrst sem er svo sett inn í arraylistann
     // eins og kannski harðkóðað fylki sem er svo loopað í gegnum með put
+
+public class TaskKeeper {
+
 
     private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
     //instance variables
@@ -57,6 +61,7 @@ public class TaskKeeper {
 
     public TaskKeeper(Context context) {
 
+
         Counter c = new Counter();
 
         for (int i = 0; i < 7; i++) {
@@ -68,6 +73,8 @@ public class TaskKeeper {
     /*    for(int i = 0; i<= allTasks.length; i++) {
             hmap.put(allTasks[i], new Counter());
         } */
+
+
 
 
         this.context = context;
@@ -86,7 +93,7 @@ public class TaskKeeper {
             /* For information: */
             //mode private = recreate the file even if it exists
             //mode append = if exists append to it, otherwise create it
-            fileOut = context.openFileOutput(filename, Context.MODE_PRIVATE);
+          fileOut = context.openFileOutput(filename, Context.MODE_PRIVATE);
 
             //ObjectOutputStream: Getur serialisað object (og primitive types) í þetta skiptið er það í file-inn
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -106,7 +113,9 @@ public class TaskKeeper {
      * Before: map is an empty hashmap
      * After: ?? has been deserialised into map??
      **/
+
     public HashMap deSerialiseHashMap() {
+
 
         //map is empty
         HashMap<Integer, String> map = null;
