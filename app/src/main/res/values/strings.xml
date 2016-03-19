@@ -2,6 +2,7 @@
     <! main activity strings>
     <string name="app_name">Project_Aapp</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="welcome">Góðann Daginn</string>
     <string name="name">Jón Halldór</string>
     <string name="edru">Þú hefur verið edrú í </string>
@@ -34,4 +35,9 @@
 
     <!about me strings>
     <string name = "aboutme1"></string>
+
+    <string name="title_activity_task">TaskActivity</string>
+
+    <string name="title_activity_sponsor">SponsorActivity</string>
+
 </resources>
