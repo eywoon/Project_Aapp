@@ -37,8 +37,8 @@
                 android:text="@string/name"
                 android:textAllCaps="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="@dimen/big"
-                android:layout_marginBottom="@dimen/big"
+                android:layout_marginTop="@dimen/medium"
+                android:layout_marginBottom="@dimen/medium"
                 android:textAlignment="center"
                 android:textSize="@dimen/biggest"
                 android:textStyle="bold"
@@ -95,6 +95,7 @@
                     android:paddingBottom="@dimen/smallest"
                     android:gravity="bottom|center"
                     android:background="@mipmap/ic_launcher"
+                    android:onClick="onTasksClick"
                     android:id="@+id/tasks"
                     />
 
@@ -105,6 +106,7 @@
                     android:gravity="bottom|center"
                     android:paddingBottom="@dimen/smallest"
                     android:text="@string/results"
+                    android:onClick="onResultsClick"
                     android:background="@mipmap/ic_launcher"
                     android:id="@+id/results"/>
 
@@ -116,6 +118,7 @@
                     android:paddingBottom="@dimen/smallest"
                     android:background="@mipmap/ic_launcher"
                     android:text="@string/emotions"
+                    android:onClick="onEmotionsClick"
                     android:id="@+id/emotions"/>
         </TableRow>
 
@@ -133,6 +136,7 @@
                     android:gravity="bottom|center"
                     android:paddingBottom="@dimen/smallest"
                     android:text="@string/goals"
+                    android:onClick="onGoalsClick"
                     android:background="@mipmap/ic_launcher"
                     android:id="@+id/goals"/>
 
@@ -144,6 +148,7 @@
                     android:paddingBottom="@dimen/smallest"
                     android:gravity="bottom|center"
                     android:text="@string/steps"
+                    android:onClick="on12stepsClick"
                     android:background="@mipmap/ic_launcher" />
 
             <Button
@@ -153,6 +158,7 @@
                     android:gravity="bottom|center"
                     android:paddingBottom="@dimen/smallest"
                     android:text="@string/sponsor"
+                    android:onClick="onSponsorClick"
                     android:background="@mipmap/ic_launcher"
                     android:id="@+id/sponsor"
                     android:onClick="onSponsorClick"/>
@@ -173,6 +179,7 @@
                     android:gravity="bottom|center"
                     android:paddingBottom="@dimen/smallest"
                     android:text="@string/aboutme"
+                    android:onClick="onMeClick"
                     android:background="@mipmap/ic_launcher"
                     android:id="@+id/aboutme"/>
 
@@ -183,6 +190,7 @@
                     android:gravity="bottom|center"
                     android:paddingBottom="@dimen/smallest"
                     android:text="@string/settings"
+                    android:onClick="onSettingsClick"
                     android:background="@mipmap/ic_launcher"
                     android:id="@+id/settings" />
 
@@ -192,6 +200,7 @@
                     android:layout_weight="1"
                     android:gravity="bottom|center"
                     android:paddingBottom="@dimen/smallest"
+                    android:onClick="onHelpClick"
                     android:text="@string/help"
                     android:background="@mipmap/ic_launcher"
                     android:id="@+id/help"/>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Steps.StepsActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:text="@string/steps"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/biggest"
+        android:textAlignment="center"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium"
+        android:padding="@dimen/smallest"
+        android:text="@string/spor1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step1"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor3"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step3"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor4"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step4"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor5"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step5"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor6"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step6"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor7"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step7"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor8"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step8"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor9"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step9"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor10"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step10"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor11"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step11"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smallest"
+        android:layout_marginTop="@dimen/medium"
+        android:text="@string/spor12"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/big"
+        android:id="@+id/step12"/>
+
+</LinearLayout>
+</ScrollView>
