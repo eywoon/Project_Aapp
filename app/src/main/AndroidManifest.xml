@@ -19,20 +19,20 @@
             </intent-filter>
         </activity>
 
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
         <activity
             android:name=".TaskManager.TaskActivity"
             android:label="@string/title_activity_task"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Sponsor.SponsorActivity"
             android:label="@string/title_activity_sponsor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sponsor.ChangeSponsorActivity"
+            android:label="@string/title_activity_change_sponsor"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-
     </application>
 
 </manifest>
