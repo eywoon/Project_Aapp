@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">0dp</dimen>
     <dimen name="smallest">12dp</dimen>
     <dimen name="extrasmall">16dp</dimen>
-    <dimen name="small" >20dp</dimen>
+    <dimen name="small">20dp</dimen>
     <dimen name="medium">24dp</dimen>
     <dimen name="big">30dp</dimen>
     <dimen name="biggest">38dp</dimen>

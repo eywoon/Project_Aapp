@@ -26,10 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
+    public void onSponsorClick(View view){
+        Intent intent = new Intent(this, SponsorActivity.class);
+        startActivity(intent);
+    }
 }

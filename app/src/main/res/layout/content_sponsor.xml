@@ -5,23 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/fab_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="is.hi.project_aapp.Sponsor.SponsorActivity"
-    tools:showIn="@layout/activity_sponsor">
+    tools:showIn="@layout/activity_sponsor"
+    android:orientation="vertical">
 
     <TextView
+        android:text="Nafn"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big"
+        android:id="@+id/welcome"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/small"
+        android:layout_alignBottom="@+id/welcome"
+        android:id="@+id/name" />
+
+    <TextView
+        android:text="Símanúmer"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big"
+        android:id="@+id/welcome"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/small"
+        android:id="@+id/phoneno" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sponsor"/>
+        android:orientation="horizontal">
 
-    <TextView android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Breyta"
+            android:id="@+id/changesponsor"
+            android:onClick="onChangeSponsor" />
 
-    <TextView android:id="@+id/phoneno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hringja"
+            android:id="@+id/callsponsor"
+            android:onClick="onCallSponsor" />
+    </LinearLayout>
+
+    </LinearLayout>

@@ -33,11 +33,11 @@
     <string name="spor12">12. Við urðum fyrir andlegri vakningu er við stigum þessi spor og reyndum því að flytja öðrum alkóhólistum þennan boðskap og fylgja þessum meginreglum í lífi okkar og starfi.</string>
 
 
-
-    <string name = "aboutme1"></string>
+    <string name="aboutme1"></string>
 
     <string name="title_activity_task">TaskActivity</string>
 
     <string name="title_activity_sponsor">SponsorActivity</string>
+    <string name="title_activity_change_sponsor">ChangeSponsorActivity</string>
 
 </resources>
