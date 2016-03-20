@@ -160,7 +160,8 @@
                     android:text="@string/sponsor"
                     android:onClick="onSponsorClick"
                     android:background="@mipmap/ic_launcher"
-                    android:id="@+id/sponsor"/>
+                    android:id="@+id/sponsor"
+                    android:onClick="onSponsorClick"/>
         </TableRow>
 
         <TableRow

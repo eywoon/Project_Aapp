@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SponsorActivity.class);
         startActivity(intent);
     }
+<<<<<<< HEAD
 
     public void onResultsClick(View view){
         Intent intent = new Intent(this, Results.class);
@@ -80,3 +81,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+=======
+}
+>>>>>>> master

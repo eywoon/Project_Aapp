@@ -1,9 +1,11 @@
 package is.hi.project_aapp.Sponsor;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -28,15 +30,7 @@ public class SponsorActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
-            }
-        });
         System.out.println("HALLALALASDFJASLDIFHALSIDHFASLDFÆASDFJOÆ");
         //Create a cursor
         try {
@@ -54,7 +48,7 @@ public class SponsorActivity extends AppCompatActivity {
                 TextView name = (TextView)findViewById(R.id.name);
                 name.setText(nameText);
                 TextView phoneNo = (TextView)findViewById(R.id.phoneno);
-                phoneNo.setText(String.valueOf(phoneNoText));
+                phoneNo.setText(Integer.toString(phoneNoText));
             }
             cursor.close();
             db.close();
@@ -65,5 +59,15 @@ public class SponsorActivity extends AppCompatActivity {
         }
     }
 
+    public void onCallSponsor(View view){
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:0377778888"));
+        startActivity(callIntent);
+    }
+
+    public void onChangeSponsor(View view){
+        Intent intent = new Intent(this, ChangeSponsorActivity.class);
+        startActivity(intent);
+    }
 
 }
