@@ -18,10 +18,12 @@ import android.widget.Toast;
 
 import is.hi.project_aapp.R;
 import is.hi.project_aapp.SQL.AAppDatabaseHelper;
+import is.hi.project_aapp.Sponsor.Sponsor;
 
 
 public class SponsorActivity extends AppCompatActivity {
     private static final String TAG = "sponsorA";
+    private Sponsor sponsor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class SponsorActivity extends AppCompatActivity {
                 String nameText = cursor.getString(0);
                 int phoneNoText = cursor.getInt(1);
 
+                sponsor = new Sponsor(nameText, phoneNoText);
                 //Populate the drink name
                 TextView name = (TextView)findViewById(R.id.name);
                 name.setText(nameText);
@@ -67,6 +70,8 @@ public class SponsorActivity extends AppCompatActivity {
 
     public void onChangeSponsor(View view){
         Intent intent = new Intent(this, ChangeSponsorActivity.class);
+        intent.putExtra("name", sponsor.getName());
+        intent.putExtra("phoneno", sponsor.getPhoneNo());
         startActivity(intent);
     }
 
