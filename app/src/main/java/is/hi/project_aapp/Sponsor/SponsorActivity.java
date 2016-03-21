@@ -64,7 +64,7 @@ public class SponsorActivity extends AppCompatActivity {
 
     public void onCallSponsor(View view){
         Intent callIntent = new Intent(Intent.ACTION_DIAL);
-        callIntent.setData(Uri.parse("tel:0377778888"));
+        callIntent.setData(Uri.parse("tel:"+sponsor.getPhoneNo()));
         startActivity(callIntent);
     }
 
