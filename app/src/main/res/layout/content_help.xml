@@ -9,9 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="is.hi.project_aapp.Help.Help"
-    tools:showIn="@layout/activity_help">
-
+    tools:context="is.hi.project_aapp.Results.Results"
+    tools:showIn="@layout/activity_results">
 
     <TextView
         android:layout_width="match_parent"
@@ -23,4 +22,5 @@
         android:textSize="@dimen/biggest"
         android:textAlignment="center"
         />
+
 </LinearLayout>
