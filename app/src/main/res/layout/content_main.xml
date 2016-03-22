@@ -159,8 +159,7 @@
                     android:paddingBottom="@dimen/smallest"
                     android:text="@string/sponsor"
                     android:background="@mipmap/ic_launcher"
-                    android:id="@+id/sponsor"
-                    android:onClick="onSponsorClick"/>
+                    android:id="@+id/sponsor"/>
         </TableRow>
 
         <TableRow
