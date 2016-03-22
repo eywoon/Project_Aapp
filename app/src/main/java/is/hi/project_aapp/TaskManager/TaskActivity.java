@@ -21,6 +21,11 @@ public class TaskActivity extends AppCompatActivity {
         setContentView(R.layout.tasks);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
     }
 
 

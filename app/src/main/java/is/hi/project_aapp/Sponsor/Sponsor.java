@@ -7,7 +7,7 @@ public class Sponsor {
     private String name;
     private int phoneNo;
 
-    private Sponsor(String name, int phoneNo){
+    Sponsor(String name, int phoneNo){
         this.name = name;
         this.phoneNo = phoneNo;
     }

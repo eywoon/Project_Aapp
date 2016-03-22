@@ -1,14 +1,22 @@
 package is.hi.project_aapp.Sponsor;
 
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import is.hi.project_aapp.R;
+import is.hi.project_aapp.SQL.AAppDatabaseHelper;
 
 public class ChangeSponsorActivity extends AppCompatActivity {
 
@@ -16,22 +24,53 @@ public class ChangeSponsorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_sponsor);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        int phoneno = intent.getIntExtra("phoneno", 0);
+        EditText nameText = (EditText)findViewById(R.id.name);
+        EditText phonenoText = (EditText)findViewById(R.id.phoneno);
+        nameText.setText(name);
+        phonenoText.setText(Integer.toString(phoneno));
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     public void onClickChangeSponsor(View view){
-        Toast toast = Toast.makeText(this, "Þetta var vistað!", Toast.LENGTH_LONG);
-        toast.show();
+
+        new UpdateSponsorTask().execute(1);
+        Intent intent = new Intent(this, SponsorActivity.class);
+        startActivity(intent);
+    }
+
+    //Inner class to update the drink.
+    private class UpdateSponsorTask extends AsyncTask<Integer, Void, Boolean> {
+        ContentValues sponsorValues;
+        protected void onPreExecute() {
+            EditText name = (EditText)findViewById(R.id.name);
+            EditText phoneno = (EditText)findViewById(R.id.phoneno);
+            sponsorValues = new ContentValues();
+            sponsorValues.put("NAME", name.getText().toString());
+            sponsorValues.put("PHONENO", Integer.parseInt(phoneno.getText().toString()));
+        }
+        protected Boolean doInBackground(Integer... drinks) {
+            int drinkNo = drinks[0];
+            SQLiteOpenHelper starbuzzDatabaseHelper = new AAppDatabaseHelper(ChangeSponsorActivity.this);
+            try {
+                SQLiteDatabase db = starbuzzDatabaseHelper.getWritableDatabase();
+                db.update("SPONSOR", sponsorValues,
+                        "_id = ?", new String[] {Integer.toString(1)});
+                db.close();
+                return true;
+            } catch(SQLiteException e) {
+                return false;
+            }
+        }
+        protected void onPostExecute(Boolean success) {
+            if (!success) {
+                Toast toast = Toast.makeText(ChangeSponsorActivity.this,
+                        "Database unavailable", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
     }
 
 }

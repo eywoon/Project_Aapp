@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import javax.xml.transform.Result;
 
+
 import is.hi.project_aapp.Emotions.Emotions;
 //import is.hi.project_aapp.Goals.Goals;
 //import is.hi.project_aapp.Help.Help;
@@ -45,15 +46,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onSponsorClick(View view){
-        Intent intent = new Intent(this, SponsorActivity.class);
-        startActivity(intent);
-    }
+
 
     public void onResultsClick(View view){
         Intent intent = new Intent(this, Results.class);
         startActivity(intent);
     }
+
+    public void onSponsorClick(View view){
+        Intent intent = new Intent(this, SponsorActivity.class);
+        startActivity(intent);
+
+    }
+
+
 
     public void onSettingsClick(View view){
         Intent intent = new Intent(this, Settings.class);
@@ -83,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
     public void onMeClick(View view){
         Intent intent = new Intent(this, Me.class);
         startActivity(intent);
+
     }
+
 }
 
 
