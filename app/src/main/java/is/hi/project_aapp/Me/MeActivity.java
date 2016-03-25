@@ -1,4 +1,4 @@
-package is.hi.project_aapp.Steps;
+package is.hi.project_aapp.Me;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import is.hi.project_aapp.R;
 
-public class Steps extends AppCompatActivity {
+public class MeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_steps);
+        setContentView(R.layout.activity_me);
 
 
     }
