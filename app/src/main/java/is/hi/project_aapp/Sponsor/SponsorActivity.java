@@ -32,7 +32,7 @@ public class SponsorActivity extends AppCompatActivity {
 
 
 
-        System.out.println("HALLALALASDFJASLDIFHALSIDHFASLDFÆASDFJOÆ");
+
         //Create a cursor
         try {
             SQLiteOpenHelper aappDatabaseHelper = new AAppDatabaseHelper(this);
