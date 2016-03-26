@@ -73,16 +73,24 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
             db.execSQL(CREATE_TABLE_USER);
             System.out.println(CREATE_TABLE_SPONSOR);
             System.out.println(CREATE_TABLE_USER);
-            insertSponsor(db, "Nafn", 000);
+            setInitialValues(db);
         }
 
     }
 
-    private static void insertSponsor(SQLiteDatabase db, String name, int phoneNo){
+    private static void setInitialValues(SQLiteDatabase db){
         ContentValues sponsorValues = new ContentValues();
-        sponsorValues.put("NAME", name);
-        sponsorValues.put("PHONENO", phoneNo);
+        sponsorValues.put("NAME", "Vantar nafn");
+        sponsorValues.put("PHONENO", (Integer) 0000);
+
+        ContentValues userValues = new ContentValues();
+        userValues.put("FIRSTNAME", "Nafn");
+        userValues.put("LASTNAME", "Eftirnafn");
+        userValues.put("SOBERDAY", 01);
+        userValues.put("SOBERMONTH", 01);
+        userValues.put("SOBERYEAR", 1901);
 
         db.insert("SPONSOR", null, sponsorValues);
+        db.insert("USER", null, userValues);
     }
 }

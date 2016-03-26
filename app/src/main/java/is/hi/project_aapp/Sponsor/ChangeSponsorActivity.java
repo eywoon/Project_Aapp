@@ -41,7 +41,7 @@ public class ChangeSponsorActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //Inner class to update the drink.
+    //Inner class to update the sponsor.
     private class UpdateSponsorTask extends AsyncTask<Integer, Void, Boolean> {
         ContentValues sponsorValues;
         protected void onPreExecute() {

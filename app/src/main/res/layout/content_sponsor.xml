@@ -14,7 +14,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:text="Nafn"
+        android:text="@string/nameHolder"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/medium"
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         android:id="@+id/name" />
 
     <TextView
-        android:text="Símanúmer"
+        android:text="@string/phoneno"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/medium"
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breyta"
+            android:text="@string/change"
             android:id="@+id/changesponsor"
             android:onClick="onChangeSponsor" />
 
