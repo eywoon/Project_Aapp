@@ -42,42 +42,67 @@ import android.content.Context;
  */
 
 public class TaskKeeper {
-    // þurfa töskin kannski að vera skilgreins sem eitthva fyrst sem er svo sett inn í arraylistann
-    // eins og kannski harðkóðað fylki sem er svo loopað í gegnum með put
-
-
-
 
     private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
     //instance variables
     //hmap has a String key and keeps track of the Counter objects
     HashMap<String, Counter> hmap = new HashMap<String, Counter>();
     //Context has to come from the activity
-    Context context;
     private ArrayList<String> highPriorityTasks = new ArrayList<>();
     private ArrayList<String> mediumPriorityTasks = new ArrayList<>();
     private ArrayList<String> lowPriorityTasks = new ArrayList<>();
+    Context context;
+    Counter c;
 
 
+    /*
+     Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
+     það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
+     */
     public TaskKeeper(Context context) {
-
-
-        Counter c = new Counter();
-
-        for (int i = 0; i < 7; i++) {
-            c.addToDoneList(true);
-        }
-
-        hmap.put("randomGæi", c);
-
-    /*    for(int i = 0; i<= allTasks.length; i++) {
-            hmap.put(allTasks[i], new Counter());
-        } */
-
-
-
-
         this.context = context;
+    }
+
+    /*
+    Spurning hvort þetta þarf að vera sér aðferð sem er kallað á einhverntímann
+     */
+    public void createHashMapFirstTime() {
+        for(int i = 0; i < allTasks.length; i++) {
+            hmap.put(allTasks[i], c = new Counter());
+            int j = 0;
+            ArrayList<Boolean> temp;;
+            temp = c.getLast7Days();
+            if(temp.isEmpty()) {
+                while(j < 7) {
+                    c.addToDoneList(false);
+                    j++;
+                }
+            }
+            else{
+                //?
+            }
+
+        }
+        serialiseHashMap(hmap);
+    }
+
+    public void changeBooleanValue(boolean b, String key) {
+
+        if(hmap.containsKey(key)) {
+            // sækir Counter fyrir lykilinn
+            c = (Counter) hmap.get(key);
+            // setur nýja gildið aftast (sem er í raun alltaf true, en laga það seinna
+            c.addToDoneList(true);
+            // vistum hashmappið
+            serialiseHashMap(hmap);
+            // þetta er bara til þess að skoða
+            c.setDoneToday(b);
+            System.out.println(c.getDoneToday());
+            deSerialiseHashMap();
+        }
+        else {
+            System.out.println("hólí fokk það er einhver villa :O ");
+        }
     }
 
     /**
@@ -93,7 +118,7 @@ public class TaskKeeper {
             /* For information: */
             //mode private = recreate the file even if it exists
             //mode append = if exists append to it, otherwise create it
-          fileOut = context.openFileOutput(filename, Context.MODE_PRIVATE);
+            fileOut = context.openFileOutput(filename, Context.MODE_PRIVATE);
 
             //ObjectOutputStream: Getur serialisað object (og primitive types) í þetta skiptið er það í file-inn
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -113,9 +138,7 @@ public class TaskKeeper {
      * Before: map is an empty hashmap
      * After: ?? has been deserialised into map??
      **/
-
     public HashMap deSerialiseHashMap() {
-
 
         //map is empty
         HashMap<Integer, String> map = null;
@@ -145,7 +168,7 @@ public class TaskKeeper {
             Map.Entry mentry = (Map.Entry) iterator.next();
             System.out.print("key: " + mentry.getKey() + " & Value: ");
             System.out.println(mentry.getValue());
-            System.out.println("Valúið er: " + map.get(mentry.getValue()));
+            // System.out.println("Valúið er: " + map.get(mentry.getValue()));
             Counter c = (Counter) mentry.getValue();
             System.out.println(c.getLast7Days());
         }
@@ -166,7 +189,6 @@ public class TaskKeeper {
 
     public void sendNotification(String s) {
         //TODO: send a the push notification with the relevant string (time is already determined in each individual check method
-
     }
 
     public String getBackgroundColour() {
