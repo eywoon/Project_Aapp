@@ -49,5 +49,14 @@
 
     <string name="title_activity_change_sponsor">ChangeSponsorActivity</string>
 
+    <string name="nameHolder">Nafn</string>
+    <string name="phoneno">Símanúmer</string>
+    <string name="soberdate">Edrú síðan</string>
+    <string name="change">Breyta</string>
+    <string name="firstname">Fornafn</string>
+    <string name="lastname">Eftirnafn</string>
+    <string name="date_selected"></string>
+    <string name="date_button_set">Set Date</string>
+
 
 </resources>
