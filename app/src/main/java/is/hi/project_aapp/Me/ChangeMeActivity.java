@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,7 @@ import is.hi.project_aapp.Sponsor.SponsorActivity;
 public class ChangeMeActivity extends AppCompatActivity {
     private DatePicker datePicker;
     private int soberday, sobermonth, soberyear;
+    private Intent intent;
 
 
     @Override
@@ -32,7 +34,7 @@ public class ChangeMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_me);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         String firstName = intent.getStringExtra("firstname");
         String lastName = intent.getStringExtra("lastname");
         soberday = intent.getIntExtra("soberday", 0);
@@ -52,15 +54,14 @@ public class ChangeMeActivity extends AppCompatActivity {
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca", Toast.LENGTH_SHORT)
-                .show();
+
     }
 
     @Override
     protected Dialog onCreateDialog(int id) {
 
         if (id == 999) {
-            return new DatePickerDialog(this, myDateListener, soberyear, sobermonth, soberday);
+            return new DatePickerDialog(this, myDateListener, soberyear, sobermonth-1, soberday);
         }
         return null;
     }
@@ -74,7 +75,7 @@ public class ChangeMeActivity extends AppCompatActivity {
             // arg3 = day
             soberyear = arg1;
             soberday = arg3;
-            sobermonth = arg2;
+            sobermonth = arg2+1;
             TextView dateView = (TextView) findViewById(R.id.dateview);
             dateView.setText(new StringBuilder().append(soberday).append("/").append(sobermonth).append("/").append(soberyear));
         }
@@ -83,8 +84,16 @@ public class ChangeMeActivity extends AppCompatActivity {
     public void onClickChangeMe(View view){
 
         new UpdateUserTask().execute(1);
-        Intent intent = new Intent(this, MeActivity.class);
-        startActivity(intent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            navigateUpTo(intent);
+        }
+        else{
+            Toast toast = Toast.makeText(ChangeMeActivity.this,
+                    "Búið að breyta", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+        /*Intent intent = new Intent(this, MeActivity.class);
+        startActivity(intent);*/
     }
 
     //Inner class to update the user.
