@@ -60,10 +60,9 @@ public class ChangeSponsorActivity extends AppCompatActivity {
             sponsorValues.put("PHONENO", Integer.parseInt(phoneno.getText().toString()));
         }
         protected Boolean doInBackground(Integer... drinks) {
-            int drinkNo = drinks[0];
-            SQLiteOpenHelper starbuzzDatabaseHelper = new AAppDatabaseHelper(ChangeSponsorActivity.this);
+            SQLiteOpenHelper aappDatabaseHelper = new AAppDatabaseHelper(ChangeSponsorActivity.this);
             try {
-                SQLiteDatabase db = starbuzzDatabaseHelper.getWritableDatabase();
+                SQLiteDatabase db = aappDatabaseHelper.getWritableDatabase();
                 db.update("SPONSOR", sponsorValues,
                         "_id = ?", new String[] {Integer.toString(1)});
                 db.close();
