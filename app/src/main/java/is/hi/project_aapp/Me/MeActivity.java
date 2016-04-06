@@ -24,8 +24,9 @@ public class MeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_me);
-
-
+        //updateView();
+    }
+    public void updateView(){
         //Create a cursor
         try {
             SQLiteOpenHelper aappDatabaseHelper = new AAppDatabaseHelper(this);
@@ -40,6 +41,7 @@ public class MeActivity extends AppCompatActivity {
                 int soberYearText = cursor.getInt(2);
                 int soberMonthText = cursor.getInt(3);
                 int soberDayText = cursor.getInt(4);
+                System.out.println(soberMonthText);
 
                 user = new User(firstNameText, lastNameText, soberDayText, soberMonthText, soberYearText);
 
@@ -71,6 +73,12 @@ public class MeActivity extends AppCompatActivity {
         intent.putExtra("soberday", user.getSoberDay());
         startActivity(intent);
 
+    }
+    protected void onResume()
+    {
+        super.onResume();
+        System.out.println("mér var restartað");
+        updateView();
     }
 
 }
