@@ -84,9 +84,6 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
             db.execSQL(CREATE_TABLE_SPONSOR);
             db.execSQL(CREATE_TABLE_USER);
             db.execSQL(CREATE_TABLE_GOALS);
-            System.out.println(CREATE_TABLE_SPONSOR);
-            System.out.println(CREATE_TABLE_USER);
-            System.out.println(CREATE_TABLE_GOALS);
             setInitialValues(db);
         }
 
@@ -110,7 +107,6 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
         userValues.put("GOALDAY", 01);
         userValues.put("GOALMONTH", 01);
         userValues.put("GOALYEAR", 1901);
-
 
         db.insert("SPONSOR", null, sponsorValues);
         db.insert("USER", null, userValues);

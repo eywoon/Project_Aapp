@@ -7,12 +7,12 @@ import android.view.View;
 
 
 import is.hi.project_aapp.Emotions.Emotions;
-//import is.hi.project_aapp.Goals.Goals;
+//import is.hi.project_aapp.GoalActivity.GoalActivity;
 //import is.hi.project_aapp.Help.Help;
 //import is.hi.project_aapp.MeActivity.MeActivity;
 //import is.hi.project_aapp.Results.Results;
 //import is.hi.project_aapp.Settings.Settings;
-import is.hi.project_aapp.Goals.Goals;
+import is.hi.project_aapp.Goals.GoalActivity;
 import is.hi.project_aapp.Help.Help;
 import is.hi.project_aapp.Me.MeActivity;
 import is.hi.project_aapp.Results.Results;
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
    public void onGoalsClick(View view){
-        Intent intent = new Intent(this, Goals.class);
+        Intent intent = new Intent(this, GoalActivity.class);
         startActivity(intent);
     }
 

@@ -42,7 +42,7 @@
             android:label="@string/title_activity_results"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Goals.Goals"
+            android:name=".Goals.GoalActivity"
             android:label="@string/title_activity_goals"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -60,7 +60,7 @@
         <activity
             android:name=".Sponsor.ChangeSponsorActivity"
             android:label="@string/title_activity_change_sponsor" />
-        <activity android:name=".Me.ChangeMeActivity"></activity>
+        <activity android:name=".Me.ChangeMeActivity" />
     </application>
 
 </manifest>
