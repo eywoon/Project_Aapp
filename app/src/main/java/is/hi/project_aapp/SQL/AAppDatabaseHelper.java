@@ -1,7 +1,7 @@
 package is.hi.project_aapp.SQL;
 
 /**
- * Created by hrefnaolafsdottir on 10/03/16.
+ * Created by hrefnaolafsdottir on 10/03/16. Jóójó breyting 9 apríl
  */
 
 import android.content.ContentValues;
@@ -21,6 +21,7 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
     //Table names
     private static final String TABLE_USER = "USER";
     private static final String TABLE_SPONSOR = "SPONSOR";
+    private static final String TABLE_GOALS = "GOALS";
 
     // Common column names
     private static final String KEY_ID = "_id";
@@ -36,6 +37,12 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
     private static final String KEY_NAME = "NAME";
     private static final String KEY_PHONENO = "PHONENO";
 
+    //GOAL Table - column names
+    private static final String KEY_GOAL = "GOAL";
+    private static final String KEY_GOALYEAR = "GOALYEAR";
+    private static final String KEY_GOALDAY = "GOALDAY";
+    private static final String KEY_GOALMONTH = "GOALMONTH";
+
 
     // Table Create Statements
     //User table create statement
@@ -49,6 +56,11 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
             + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_NAME + " TEXT,"
             + KEY_PHONENO + " INTEGER" + ");";
 
+    // Goal table create statement
+    private static final String CREATE_TABLE_GOALS = "CREATE TABLE "
+            + TABLE_GOALS + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_GOAL
+            + " TEXT, " + KEY_GOALDAY + " INTEGER," + KEY_GOALMONTH + " INTEGER,"
+            + KEY_GOALYEAR+" INTEGER" + ");";
 
 
 
@@ -71,14 +83,17 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
         if(oldV < 1){
             db.execSQL(CREATE_TABLE_SPONSOR);
             db.execSQL(CREATE_TABLE_USER);
+            db.execSQL(CREATE_TABLE_GOALS);
             System.out.println(CREATE_TABLE_SPONSOR);
             System.out.println(CREATE_TABLE_USER);
+            System.out.println(CREATE_TABLE_GOALS);
             setInitialValues(db);
         }
 
     }
 
     private static void setInitialValues(SQLiteDatabase db){
+
         ContentValues sponsorValues = new ContentValues();
         sponsorValues.put("NAME", "Vantar nafn");
         sponsorValues.put("PHONENO", (Integer) 0000);
@@ -90,7 +105,15 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
         userValues.put("SOBERMONTH", 01);
         userValues.put("SOBERYEAR", 1901);
 
+        ContentValues goalValues = new ContentValues();
+        userValues.put("GOALNAME", "Markmið");
+        userValues.put("GOALDAY", 01);
+        userValues.put("GOALMONTH", 01);
+        userValues.put("GOALYEAR", 1901);
+
+
         db.insert("SPONSOR", null, sponsorValues);
         db.insert("USER", null, userValues);
+        db.insert("GOAL", null, goalValues);
     }
 }
