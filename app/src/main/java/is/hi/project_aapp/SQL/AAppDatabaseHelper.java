@@ -21,7 +21,7 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
     //Table names
     private static final String TABLE_USER = "USER";
     private static final String TABLE_SPONSOR = "SPONSOR";
-    private static final String TABLE_GOALS = "GOALS";
+    private static final String TABLE_GOALS = "GOAL";
 
     // Common column names
     private static final String KEY_ID = "_id";
@@ -106,13 +106,14 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
         userValues.put("SOBERYEAR", 1901);
 
         ContentValues goalValues = new ContentValues();
-        userValues.put("GOALNAME", "Markmið");
-        userValues.put("GOALDAY", 01);
-        userValues.put("GOALMONTH", 01);
-        userValues.put("GOALYEAR", 1901);
+        goalValues.put("GOAL", "Markmið");
+        goalValues.put("GOALDAY", 01);
+        goalValues.put("GOALMONTH", 01);
+        goalValues.put("GOALYEAR", 1970);
 
 
         db.insert("SPONSOR", null, sponsorValues);
+        System.out.println("ég er sponsorvalues");
         db.insert("USER", null, userValues);
         db.insert("GOAL", null, goalValues);
     }
