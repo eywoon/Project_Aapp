@@ -57,6 +57,7 @@
     <string name="lastname">Eftirnafn</string>
     <string name="date_selected"></string>
     <string name="date_button_set">Set Date</string>
+    <string name="hello">Góðan Daginn!</string>
 
 
 </resources>

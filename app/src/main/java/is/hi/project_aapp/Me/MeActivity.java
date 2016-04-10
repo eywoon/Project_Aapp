@@ -24,7 +24,6 @@ public class MeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_me);
-        //updateView();
     }
     public void updateView(){
         //Create a cursor
@@ -77,7 +76,6 @@ public class MeActivity extends AppCompatActivity {
     protected void onResume()
     {
         super.onResume();
-        System.out.println("mér var restartað");
         updateView();
     }
 
