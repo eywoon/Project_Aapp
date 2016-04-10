@@ -12,13 +12,14 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:weightSum="100"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        >
 
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_weight="50"
+            android:background="#B9F6CA"
             >
 
         <TextView
@@ -28,7 +29,7 @@
                 android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/big"
+                android:layout_marginTop="@dimen/medium"
                 android:id="@+id/welcome"/>
 
         <TextView
@@ -36,9 +37,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name"
                 android:textAllCaps="true"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="@dimen/medium"
-                android:layout_marginBottom="@dimen/medium"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="@dimen/small"
+                android:layout_marginBottom="@dimen/small"
                 android:textAlignment="center"
                 android:textSize="@dimen/biggest"
                 android:textStyle="bold"
@@ -77,7 +78,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="50"
-            android:layout_centerHorizontal="true">
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorAccent">
 
 
         <TableRow
@@ -90,37 +92,51 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_weight="0.9"
                     android:text="@string/tasks"
-                    android:paddingBottom="@dimen/smallest"
                     android:gravity="bottom|center"
-                    android:background="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/ic_check_circle_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
                     android:onClick="onTasksClick"
                     android:id="@+id/tasks"
+                    android:layout_margin="@dimen/nulls"
                     />
 
             <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="bottom|center"
-                    android:paddingBottom="@dimen/smallest"
-                    android:text="@string/results"
-                    android:onClick="onResultsClick"
-                    android:background="@mipmap/ic_launcher"
-                    android:id="@+id/results"/>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="bottom|center"
+                android:drawableTop="@mipmap/ic_insert_comment_white_48dp"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/white"
+                android:text="@string/emotions"
+                android:paddingBottom="@dimen/smallest"
+                android:paddingTop="@dimen/smallest"
+                android:paddingLeft="@dimen/nulls"
+                android:paddingRight="@dimen/nulls"
+                android:onClick="onEmotionsClick"
+                android:id="@+id/emotions"
+                />
 
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="bottom|center"
-                    android:paddingBottom="@dimen/smallest"
-                    android:background="@mipmap/ic_launcher"
-                    android:text="@string/emotions"
-                    android:onClick="onEmotionsClick"
-                    android:id="@+id/emotions"/>
+                    android:text="@string/results"
+                    android:onClick="onResultsClick"
+                    android:drawableTop="@mipmap/ic_timeline_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
+                    android:id="@+id/results"
+                    />
+
         </TableRow>
+
 
         <TableRow
                 android:id="@+id/tableRow2"
@@ -134,10 +150,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="bottom|center"
-                    android:paddingBottom="@dimen/smallest"
                     android:text="@string/goals"
                     android:onClick="onGoalsClick"
-                    android:background="@mipmap/ic_launcher"
+                    android:drawableTop="@mipmap/ic_event_available_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
                     android:id="@+id/goals"/>
 
             <Button
@@ -145,20 +163,25 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:id="@+id/steps"
-                    android:paddingBottom="@dimen/smallest"
+                    android:drawableTop="@mipmap/ic_list_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
                     android:gravity="bottom|center"
                     android:text="@string/steps"
                     android:onClick="on12stepsClick"
-                    android:background="@mipmap/ic_launcher" />
+                     />
 
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="bottom|center"
-                    android:paddingBottom="@dimen/smallest"
+                    android:drawableTop="@mipmap/group_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
                     android:text="@string/sponsor"
-                    android:background="@mipmap/ic_launcher"
                     android:id="@+id/sponsor"
                 android:onClick="onSponsorClick"/>
         </TableRow>
@@ -176,10 +199,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="bottom|center"
-                    android:paddingBottom="@dimen/smallest"
+                    android:drawableTop="@mipmap/ic_face_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
                     android:text="@string/aboutme"
                     android:onClick="onMeClick"
-                    android:background="@mipmap/ic_launcher"
                     android:id="@+id/aboutme"/>
 
             <Button
@@ -187,10 +212,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="bottom|center"
+                    android:drawableTop="@mipmap/ic_settings_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
                     android:paddingBottom="@dimen/smallest"
+                    android:paddingTop="@dimen/smallest"
+                    android:paddingLeft="@dimen/nulls"
+                    android:paddingRight="@dimen/nulls"
                     android:text="@string/settings"
                     android:onClick="onSettingsClick"
-                    android:background="@mipmap/ic_launcher"
                     android:id="@+id/settings" />
 
             <Button
@@ -198,10 +228,12 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="bottom|center"
-                    android:paddingBottom="@dimen/smallest"
+                    android:drawableTop="@mipmap/ic_help_white_48dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/smallest"
                     android:onClick="onHelpClick"
                     android:text="@string/help"
-                    android:background="@mipmap/ic_launcher"
                     android:id="@+id/help"/>
         </TableRow>
     </TableLayout>
