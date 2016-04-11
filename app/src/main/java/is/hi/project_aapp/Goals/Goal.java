@@ -3,11 +3,11 @@ package is.hi.project_aapp.Goals;
 /**
  * Created by hrefnaolafsdottir on 09/04/16.
  */
-public class Goals {
+public class Goal {
     private String goal;
     private int goalDay, goalMonth, goalYear;
 
-    Goals(String goal, int goalDay, int goalMonth, int goalYear){
+    Goal(String goal, int goalDay, int goalMonth, int goalYear){
         this.goal = goal;
         this.goalDay = goalDay;
         this.goalMonth = goalMonth;

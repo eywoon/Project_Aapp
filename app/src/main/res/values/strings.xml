@@ -58,6 +58,7 @@
     <string name="date_selected"></string>
     <string name="date_button_set">Set Date</string>
     <string name="hello">Góðan Daginn!</string>
+    <string name="title_activity_goal_list">GoalListActivity</string>
 
 
 </resources>
