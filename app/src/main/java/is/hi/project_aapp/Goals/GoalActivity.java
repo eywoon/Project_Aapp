@@ -9,7 +9,7 @@ import android.view.View;
 
 import is.hi.project_aapp.R;
 
-public class GoalsActivity extends AppCompatActivity {
+public class GoalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

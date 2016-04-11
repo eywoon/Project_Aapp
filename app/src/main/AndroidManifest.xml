@@ -42,7 +42,7 @@
             android:label="@string/title_activity_results"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Goals.GoalsActivity"
+            android:name=".Goals.GoalActivity"
             android:label="@string/title_activity_goals"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -62,6 +62,11 @@
             android:label="@string/title_activity_change_sponsor" />
         <activity android:name=".Me.ChangeMeActivity" />
         <activity android:name=".TaskManager.TaskListActivity" >
+        </activity>
+        <activity
+            android:name=".Goals.GoalListActivity"
+            android:label="@string/title_activity_goal_list"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 
