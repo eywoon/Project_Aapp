@@ -47,6 +47,7 @@ public class TaskKeeper {
     //instance variables
     //hmap has a String key and keeps track of the Counter objects
     HashMap<String, Counter> hmap = new HashMap<String, Counter>();
+
     //Context has to come from the activity
     private ArrayList<String> highPriorityTasks = new ArrayList<>();
     private ArrayList<String> mediumPriorityTasks = new ArrayList<>();
@@ -55,18 +56,31 @@ public class TaskKeeper {
     Counter c;
 
 
+
     /*
-     Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
-     það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
-     */
+         Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
+         það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
+         */
     public TaskKeeper(Context context) {
         this.context = context;
+     /*   if(hmap != null) {
+            createHashMapFirstTime();
+            deSerialiseHashMap();
+        } */
+       //deSerialiseHashMap();
+       // createHashMapFirstTime();
+
+    }
+
+    public String[] getAllTasks() {
+        return allTasks;
     }
 
     /*
     Spurning hvort þetta þarf að vera sér aðferð sem er kallað á einhverntímann
      */
     public void createHashMapFirstTime() {
+       // hmap = new HashMap<>();
         for(int i = 0; i < allTasks.length; i++) {
             hmap.put(allTasks[i], c = new Counter());
             int j = 0;
@@ -86,9 +100,16 @@ public class TaskKeeper {
         serialiseHashMap(hmap);
     }
 
-    public void changeBooleanValue(boolean b, String key) {
+    public void changeBooleanValue(String key, boolean b) {
+
+      //  HashMap hmap = deSerialiseHashMap();
+
+        if(hmap.isEmpty()) {
+            System.out.println("HashMap is empty :( ");
+        }
 
         if(hmap.containsKey(key)) {
+            System.out.println("_FDASFDASFKDASLFKLÆDASKGÆAFLKDHJGFLÆDAJSLGÆLFKAGDJSK");
             // sækir Counter fyrir lykilinn
             c = (Counter) hmap.get(key);
             // setur nýja gildið aftast (sem er í raun alltaf true, en laga það seinna
@@ -138,10 +159,12 @@ public class TaskKeeper {
      * Before: map is an empty hashmap
      * After: ?? has been deserialised into map??
      **/
-    public HashMap deSerialiseHashMap() {
+    public void deSerialiseHashMap() {
 
         //map is empty
-        HashMap<Integer, String> map = null;
+        //Var svona áður? er það virkilega rétt, að hafa string og int
+      //  HashMap<Integer, String> map = null;
+        HashMap<String, Counter> map = null;
         String filename = "hashmap";
         try {
             FileInputStream fis = context.openFileInput(filename);
@@ -152,11 +175,11 @@ public class TaskKeeper {
             fis.close();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            return map;
+            //return map;
         } catch (ClassNotFoundException c) {
             System.out.println("Class not found");
             c.printStackTrace();
-            return map;
+            //return map;
         }
         System.out.println("Deserialized HashMap..");
         // Display content using Iterator
@@ -172,7 +195,12 @@ public class TaskKeeper {
             Counter c = (Counter) mentry.getValue();
             System.out.println(c.getLast7Days());
         }
-        return map;
+        hmap = map;
+       // return map;
+    }
+
+    public HashMap getMap(){
+        return hmap;
     }
 
     public void checkDaily() {
