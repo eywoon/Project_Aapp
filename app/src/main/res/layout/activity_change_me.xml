@@ -8,52 +8,122 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="is.hi.project_aapp.Me.ChangeMeActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/back">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="@dimen/smallest"
+        android:src="@mipmap/ic_face_white_48dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/firstname"/>
+        android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        android:text="@string/firstname"
+/>
 
     <EditText
         android:id="@+id/firstname"
-        android:layout_width="fill_parent"
+        android:hint="Jón"
+        android:inputType="text"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Durr"
-        android:inputType="text" />
+        android:layout_marginTop="@dimen/nulls"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/lastname"/>
+        android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        android:text="@string/lastname"
+        />
+
     <EditText
         android:id="@+id/lastnam"
-        android:layout_width="fill_parent"
+        android:inputType="text"
+        android:hint="Jónsson"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_marginTop="@dimen/nulls"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        />
+
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        android:text="@string/soberdate"
+        />
+
     <TextView
         android:id="@+id/dateview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:text="@string/date_selected" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:text="@string/date_selected"
         android:onClick="setDate"
-        android:text="@string/date_button_set" />
-    </LinearLayout>
-
-    <Button
+        android:textColor="@color/white"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Breyta"
-        android:onClick="onClickChangeMe"/>
+        android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        android:drawableRight="@mipmap/ic_event_white_24dp"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/smallest"
+            android:layout_marginBottom="@dimen/smallest"
+            android:layout_marginRight="@dimen/smallest"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium"
+            android:textAlignment="center"
+            android:text="@string/vista"
+            android:onClick="onClickChangeMe"
+            android:drawableLeft="@mipmap/ic_done_white_48dp"/>
+    </LinearLayout>
 
 </LinearLayout>

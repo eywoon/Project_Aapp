@@ -19,11 +19,11 @@
             android:orientation="vertical"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:background="#B9F6CA"
+            android:background="@color/back"
             >
 
         <TextView
-                android:text="@string/hello"
+                android:text="@string/welcome"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/big"
                 android:textAlignment="center"
@@ -63,6 +63,8 @@
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/smallest"
                 android:layout_marginBottom="@dimen/nulls"
+                android:layout_marginLeft="@dimen/smallest"
+                android:layout_marginRight="@dimen/smallest"
                 android:textAlignment="center"
                 android:textSize="@dimen/big"
                 android:layout_alignBottom="@+id/edru"

@@ -56,8 +56,9 @@
     <string name="firstname">Fornafn</string>
     <string name="lastname">Eftirnafn</string>
     <string name="date_selected"></string>
-    <string name="date_button_set">Set Date</string>
-    <string name="hello">Góðan Daginn!</string>
-
+    <string name="date_button">Velja</string>
+    <string name="hello">Góðan Daginn</string>
+    <string name="vista">Vista breytingar</string>
+    <string name="hringja">Hringja</string>
 
 </resources>

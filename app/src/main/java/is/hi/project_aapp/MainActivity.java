@@ -13,7 +13,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
-import org.joda.time.LocalDate;
+import java.util.Formatter;
+
+import org.joda.time.*;
+import org.joda.time.format.PeriodFormatter;
 
 import is.hi.project_aapp.Emotions.Emotions;
 import is.hi.project_aapp.Goals.GoalsActivity;
@@ -58,33 +61,34 @@ public class MainActivity extends AppCompatActivity {
                 int soberMonthText = cursor.getInt(2);
                 int soberDayText = cursor.getInt(3);
 
+
                 LocalDate dateToday = LocalDate.now();
 
+                LocalDate dateThen = new LocalDate(soberYearText, soberMonthText, soberDayText);
+
+                PeriodType periodType = PeriodType.standard().withWeeksRemoved();
+                Period period = new Period(dateThen, dateToday).normalizedStandard(periodType);
                 String soberDate = "";
-                dateToday = dateToday.minusYears(soberYearText);
-                dateToday = dateToday.minusMonths(soberMonthText);
-                dateToday = dateToday.minusDays(soberDayText);
 
-
-
-                if(dateToday.getYear() > 0){
-                    soberDate =  dateToday.getYear()+" ár ";
-                }
-                if (dateToday.getMonthOfYear() > 1){
-                    soberDate = soberDate+dateToday.getMonthOfYear() + " mánuði ";
-                }
-                if (dateToday.getMonthOfYear() == 1){
-                    soberDate = soberDate+dateToday.getMonthOfYear() + " mánuð ";
+                if(period.getYears() > 0){
+                    soberDate =  period.getYears()+" ár ";
                 }
 
-                if (dateToday.getDayOfMonth() == 1){
-                    soberDate = soberDate+dateToday.getDayOfMonth() + " dag";
+                if (period.getMonths() > 1){
+                    soberDate = soberDate+period.getMonths() + " mánuði ";
                 }
-                if (dateToday.getDayOfMonth() > 1){
-                    soberDate = soberDate+dateToday.getDayOfMonth() + " daga";
+                if (period.getMonths() == 1){
+                    soberDate = soberDate+period.getMonths() + " mánuð ";
                 }
 
-                TextView name = (TextView)findViewById(R.id.name);
+                if (period.getDays() == 1||period.getDays() == 21||period.getDays() == 31){
+                    soberDate = soberDate+period.getDays() + " dag";
+                }
+                if (period.getDays() > 1 && period.getDays() != 21 && period.getDays() != 31){
+                    soberDate = soberDate+period.getDays() + " daga";
+                }
+
+                TextView name = (TextView) findViewById(R.id.name);
                 name.setText(firstNameText);
                 TextView soberDateView = (TextView)findViewById(R.id.dagar);
                 soberDateView.setText(soberDate);
@@ -96,18 +100,12 @@ public class MainActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "VESEN", Toast.LENGTH_SHORT);
             toast.show();
         }
-
     }
-
-
-
-
 
     public void on12stepsClick (View view){
         Intent intent = new Intent(this, StepsActivity.class);
         startActivity(intent);
     }
-
 
 
     public void onResultsClick(View view){
@@ -120,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
 
 
     public void onSettingsClick(View view){
