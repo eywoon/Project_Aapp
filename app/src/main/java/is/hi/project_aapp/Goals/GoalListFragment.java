@@ -1,7 +1,8 @@
 package is.hi.project_aapp.Goals;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -34,13 +35,24 @@ public class GoalListFragment extends Fragment {
         updateUI();
         return view;
     }
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
 
     public void updateUI() {
         GoalLab goalLab = GoalLab.get(getActivity());
         List<Goal> goals = goalLab.getGoals();
 
-        mAdapter = new GoalAdapter(goals);
-        mGoalRecyclerView.setAdapter(mAdapter);
+        if(mAdapter == null){
+            mAdapter = new GoalAdapter(goals);
+            mGoalRecyclerView.setAdapter(mAdapter);
+        } else{
+            mAdapter.setGoals(goals);
+            mAdapter.notifyDataSetChanged();
+        }
+
     }
 
 
@@ -63,15 +75,15 @@ public class GoalListFragment extends Fragment {
         public void bindGoal(Goal goal) {
             mGoal = goal;
             mTitleTextView.setText(mGoal.getGoal());
-           // mDateTextView.setText(mGoal.getGoalDay());
-            mSolvedCheckBox.setChecked(true);
+            mDateTextView.setText(mGoal.getDate());
+            mSolvedCheckBox.setChecked(goal.isDone());
         }
 
 
         @Override
         public void onClick(View v) {
-            //geyma
-            int pos = getAdapterPosition();
+            Intent intent = GoalActivity.newIntent(getActivity(), mGoal.getId());
+            startActivity(intent);
         }
     }
 
@@ -98,6 +110,10 @@ public class GoalListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mGoals.size();
+        }
+
+        public void setGoals(List<Goal> goals){
+            mGoals = goals;
         }
 
 

@@ -39,6 +39,7 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
 
     //GOAL Table - column names
     private static final String KEY_GOAL = "GOAL";
+    private static final String KEY_ISDONE = "ISDONE";
     private static final String KEY_GOALYEAR = "GOALYEAR";
     private static final String KEY_GOALDAY = "GOALDAY";
     private static final String KEY_GOALMONTH = "GOALMONTH";
@@ -60,7 +61,7 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
     private static final String CREATE_TABLE_GOALS = "CREATE TABLE "
             + TABLE_GOALS + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_GOAL
             + " TEXT, " + KEY_GOALDAY + " INTEGER," + KEY_GOALMONTH + " INTEGER,"
-            + KEY_GOALYEAR+" INTEGER" + ");";
+            + KEY_GOALYEAR+" INTEGER, " + KEY_ISDONE+" INTEGER"+ ");";
 
 
 
@@ -103,17 +104,17 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
         userValues.put("LASTNAME", "Eftirnafn");
         userValues.put("SOBERDAY", 01);
         userValues.put("SOBERMONTH", 01);
-        userValues.put("SOBERYEAR", 1901);
+        userValues.put("SOBERYEAR", 1970);
 
         ContentValues goalValues = new ContentValues();
         goalValues.put("GOAL", "Markmið");
         goalValues.put("GOALDAY", 01);
         goalValues.put("GOALMONTH", 01);
         goalValues.put("GOALYEAR", 1970);
+        goalValues.put("ISDONE", 0);
 
 
         db.insert("SPONSOR", null, sponsorValues);
-        System.out.println("ég er sponsorvalues");
         db.insert("USER", null, userValues);
         db.insert("GOAL", null, goalValues);
     }
