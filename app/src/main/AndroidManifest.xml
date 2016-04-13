@@ -38,7 +38,7 @@
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Results.Results"
+            android:name=".Results.ResultActivity"
             android:label="@string/title_activity_results"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

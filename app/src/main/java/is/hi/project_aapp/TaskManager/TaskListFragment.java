@@ -28,8 +28,8 @@ public class TaskListFragment extends Fragment {
     private RecyclerView mTaskRecyclerView;
     private TaskAdapter mAdapter;
     private Context mContext;
- //   private TaskKeeper mTaskKeeper;
-    //= new TaskKeeper(getActivity().getApplicationContext());
+    private TaskKeeper mTaskKeeper;
+
     //= new TaskKeeper(mContext);
 
     //?? veit ekki með þetta
@@ -44,6 +44,10 @@ public class TaskListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        mTaskKeeper =  new TaskKeeper(getActivity().getApplicationContext());
+       // mTaskKeeper.createHashMapFirstTime();
+        mTaskKeeper.deSerialiseHashMap();
 
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
 
@@ -85,14 +89,10 @@ public class TaskListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-         //   mTaskKeeper = new TaskKeeper(getActivity().getApplicationContext());
             int pos = getAdapterPosition();
             mAdapter.remove(pos);
-         //   mTaskKeeper.createHashMapFirstTime();
-         //   mTaskKeeper.deSerialiseHashMap();
-         //   mTaskKeeper.changeBooleanValue(mTask.getTask(), true);
+            mTaskKeeper.changeBooleanValue(mTask.getTask(), true);
             Toast.makeText(getActivity(), mTask.getTask() +  " clicked!" , Toast.LENGTH_SHORT).show();
-         //   mTaskKeeper.serialiseHashMap(hmap);
         }
     }
 
