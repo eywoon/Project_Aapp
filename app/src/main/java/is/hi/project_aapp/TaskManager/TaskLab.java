@@ -13,10 +13,10 @@ import java.util.List;
 public class TaskLab {
     private static TaskLab sTaskLab;
     private List<Task> tasks;
-//    private String[] allTasks;
-    private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
-  //  private TaskKeeper mTaskKeeper;
-    private HashMap hmap;
+    private String[] allTasks;
+//    private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
+    private TaskKeeper mTaskKeeper;
+
 
 
     public static TaskLab get(Context context) {
@@ -26,24 +26,11 @@ public class TaskLab {
         return sTaskLab;
     }
 
-
-
     public TaskLab(Context context) {
         tasks = new ArrayList<>();
+        mTaskKeeper = new TaskKeeper(context);
+        allTasks = mTaskKeeper.getAllTasks();
 
-
-        // þetta er til þess að fá listann af tasks, s.s. strengina
-        // svo hann sé ekki geymdur út um allt
-      //  mTaskKeeper = new TaskKeeper(context);
-      //  allTasks = mTaskKeeper.getAllTasks();
-
-        //ef hashmappið er minna en 7?
-        // ef þetta er tekið úr fer changeBooleanValue í villu, eins og lykilinn sé ekki til
-     //   mTaskKeeper.createHashMapFirstTime();
-        // ef mappið er deserialisað hér, þá er það ekki tómt
-       // hmap = mTaskKeeper.deSerialiseHashMap();
-
-       // System.out.println(hmap);
       // fyllir inn í arraylistann
        for(String i : allTasks) {
           Task task = new Task(i, true);
@@ -54,12 +41,4 @@ public class TaskLab {
     public List<Task> getTasks(){
         return tasks;
     }
-
-
-  /*  public void setTaskKeeper(String s, boolean b) {
-        mTaskKeeper.changeBooleanValue(b, s);
-    } */
-
-    // kannski þarf id dótið??
-
 }

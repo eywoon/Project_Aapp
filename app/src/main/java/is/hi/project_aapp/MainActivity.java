@@ -14,11 +14,10 @@ import android.widget.Toast;
 import org.joda.time.LocalDate;
 
 import is.hi.project_aapp.Emotions.Emotions;
-import is.hi.project_aapp.Goals.GoalActivity;
 import is.hi.project_aapp.Goals.GoalListActivity;
 import is.hi.project_aapp.Help.Help;
 import is.hi.project_aapp.Me.MeActivity;
-import is.hi.project_aapp.Results.Results;
+import is.hi.project_aapp.Results.ResultActivity;
 import is.hi.project_aapp.SQL.AAppDatabaseHelper;
 import is.hi.project_aapp.Settings.Settings;
 import is.hi.project_aapp.Steps.StepsActivity;
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onResultsClick(View view){
-        Intent intent = new Intent(this, Results.class);
+        Intent intent = new Intent(this, ResultActivity.class);
         startActivity(intent);
     }
 

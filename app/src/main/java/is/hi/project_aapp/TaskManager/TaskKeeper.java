@@ -63,13 +63,9 @@ public class TaskKeeper {
          */
     public TaskKeeper(Context context) {
         this.context = context;
-     /*   if(hmap != null) {
+        if(hmap.isEmpty()) {
             createHashMapFirstTime();
-            deSerialiseHashMap();
-        } */
-       //deSerialiseHashMap();
-       // createHashMapFirstTime();
-
+        }
     }
 
     public String[] getAllTasks() {
@@ -80,7 +76,7 @@ public class TaskKeeper {
     Spurning hvort þetta þarf að vera sér aðferð sem er kallað á einhverntímann
      */
     public void createHashMapFirstTime() {
-       // hmap = new HashMap<>();
+
         for(int i = 0; i < allTasks.length; i++) {
             hmap.put(allTasks[i], c = new Counter());
             int j = 0;
@@ -100,9 +96,8 @@ public class TaskKeeper {
         serialiseHashMap(hmap);
     }
 
+    //TODO: þetta b versus bara true
     public void changeBooleanValue(String key, boolean b) {
-
-      //  HashMap hmap = deSerialiseHashMap();
 
         if(hmap.isEmpty()) {
             System.out.println("HashMap is empty :( ");
@@ -117,9 +112,9 @@ public class TaskKeeper {
             // vistum hashmappið
             serialiseHashMap(hmap);
             // þetta er bara til þess að skoða
-            c.setDoneToday(b);
+           // c.setDoneToday(true);
             System.out.println(c.getDoneToday());
-            deSerialiseHashMap();
+         //  deSerialiseHashMap();
         }
         else {
             System.out.println("hólí fokk það er einhver villa :O ");
@@ -159,11 +154,9 @@ public class TaskKeeper {
      * Before: map is an empty hashmap
      * After: ?? has been deserialised into map??
      **/
-    public void deSerialiseHashMap() {
+    public HashMap deSerialiseHashMap() {
 
         //map is empty
-        //Var svona áður? er það virkilega rétt, að hafa string og int
-      //  HashMap<Integer, String> map = null;
         HashMap<String, Counter> map = null;
         String filename = "hashmap";
         try {
@@ -189,19 +182,49 @@ public class TaskKeeper {
         //plokka upplýsingar út úr mappinu
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.print("key: " + mentry.getKey() + " & Value: ");
-            System.out.println(mentry.getValue());
-            // System.out.println("Valúið er: " + map.get(mentry.getValue()));
+        //    System.out.print("key: " + mentry.getKey() + " & Value: ");
+        //    System.out.println(mentry.getValue());
             Counter c = (Counter) mentry.getValue();
-            System.out.println(c.getLast7Days());
+         //   System.out.println(c.getLast7Days());
         }
-        hmap = map;
-       // return map;
+     //   hmap = map;
+        return map;
     }
 
-    public HashMap getMap(){
+  /* public HashMap getMap(){
+        deSerialiseHashMap();
         return hmap;
+    } */
+
+    public int countTasksToday() {
+        //TODO: telja hversu margar tasks er búið að framkvæma í dag
+        hmap = deSerialiseHashMap();
+
+        Set set = hmap.entrySet();
+        Iterator iterator = set.iterator();
+
+        Boolean stats[] = new Boolean[allTasks.length];
+        int noOfTasksDoneToday = 0;
+        while (iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry) iterator.next();
+            //    System.out.print("key: " + mentry.getKey() + " & Value: ");
+            //    System.out.println(mentry.getValue());
+            Counter c = (Counter) mentry.getValue();
+            boolean status = c.getDoneToday();
+
+           // System.out.println("ÞETTA ER búið "  + status);
+            if(status == true) {
+                noOfTasksDoneToday++;
+            }
+
+        }
+
+
+      // setBackGroundColour(noOfTasksDoneToday);
+        System.out.println("Í dag er búið að gera " + noOfTasksDoneToday + " hluti");
+        return noOfTasksDoneToday;
     }
+
 
     public void checkDaily() {
         //TODO: send a push notification every day at a certain time
