@@ -33,12 +33,13 @@ public class Counter implements Serializable {
     }
 
     public boolean getDoneToday() {
+
         return doneToday;
     }
 
     public void setDoneToday(boolean b) {
         this.doneToday = b;
-        addToDoneList(doneToday);
+        //addToDoneList(doneToday);
     }
 
     /*
