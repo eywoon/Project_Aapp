@@ -1,7 +1,6 @@
 package is.hi.project_aapp;
 
 import android.content.Intent;
-import android.content.SyncAdapterType;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -18,12 +17,12 @@ import java.util.Formatter;
 import org.joda.time.*;
 import org.joda.time.format.PeriodFormatter;
 
+
 import is.hi.project_aapp.Emotions.Emotions;
-import is.hi.project_aapp.Goals.GoalsActivity;
+import is.hi.project_aapp.Goals.GoalListActivity;
 import is.hi.project_aapp.Help.Help;
 import is.hi.project_aapp.Me.MeActivity;
-import is.hi.project_aapp.Me.User;
-import is.hi.project_aapp.Results.Results;
+import is.hi.project_aapp.Results.ResultActivity;
 import is.hi.project_aapp.SQL.AAppDatabaseHelper;
 import is.hi.project_aapp.Settings.Settings;
 import is.hi.project_aapp.Steps.StepsActivity;
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onResultsClick(View view){
-        Intent intent = new Intent(this, Results.class);
+        Intent intent = new Intent(this, ResultActivity.class);
         startActivity(intent);
     }
 
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
    public void onGoalsClick(View view){
-        Intent intent = new Intent(this, GoalsActivity.class);
+        Intent intent = new Intent(this, GoalListActivity.class);
         startActivity(intent);
     }
 

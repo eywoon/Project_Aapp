@@ -47,6 +47,7 @@ public class TaskKeeper {
     //instance variables
     //hmap has a String key and keeps track of the Counter objects
     HashMap<String, Counter> hmap = new HashMap<String, Counter>();
+
     //Context has to come from the activity
     private ArrayList<String> highPriorityTasks = new ArrayList<>();
     private ArrayList<String> mediumPriorityTasks = new ArrayList<>();
@@ -55,18 +56,27 @@ public class TaskKeeper {
     Counter c;
 
 
+
     /*
-     Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
-     það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
-     */
+         Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
+         það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
+         */
     public TaskKeeper(Context context) {
         this.context = context;
+        if(hmap.isEmpty()) {
+            createHashMapFirstTime();
+        }
+    }
+
+    public String[] getAllTasks() {
+        return allTasks;
     }
 
     /*
     Spurning hvort þetta þarf að vera sér aðferð sem er kallað á einhverntímann
      */
     public void createHashMapFirstTime() {
+
         for(int i = 0; i < allTasks.length; i++) {
             hmap.put(allTasks[i], c = new Counter());
             int j = 0;
@@ -86,9 +96,15 @@ public class TaskKeeper {
         serialiseHashMap(hmap);
     }
 
-    public void changeBooleanValue(boolean b, String key) {
+    //TODO: þetta b versus bara true
+    public void changeBooleanValue(String key, boolean b) {
+
+        if(hmap.isEmpty()) {
+            System.out.println("HashMap is empty :( ");
+        }
 
         if(hmap.containsKey(key)) {
+            System.out.println("_FDASFDASFKDASLFKLÆDASKGÆAFLKDHJGFLÆDAJSLGÆLFKAGDJSK");
             // sækir Counter fyrir lykilinn
             c = (Counter) hmap.get(key);
             // setur nýja gildið aftast (sem er í raun alltaf true, en laga það seinna
@@ -96,9 +112,9 @@ public class TaskKeeper {
             // vistum hashmappið
             serialiseHashMap(hmap);
             // þetta er bara til þess að skoða
-            c.setDoneToday(b);
+           // c.setDoneToday(true);
             System.out.println(c.getDoneToday());
-            deSerialiseHashMap();
+         //  deSerialiseHashMap();
         }
         else {
             System.out.println("hólí fokk það er einhver villa :O ");
@@ -141,7 +157,7 @@ public class TaskKeeper {
     public HashMap deSerialiseHashMap() {
 
         //map is empty
-        HashMap<Integer, String> map = null;
+        HashMap<String, Counter> map = null;
         String filename = "hashmap";
         try {
             FileInputStream fis = context.openFileInput(filename);
@@ -152,11 +168,11 @@ public class TaskKeeper {
             fis.close();
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            return map;
+            //return map;
         } catch (ClassNotFoundException c) {
             System.out.println("Class not found");
             c.printStackTrace();
-            return map;
+            //return map;
         }
         System.out.println("Deserialized HashMap..");
         // Display content using Iterator
@@ -166,14 +182,49 @@ public class TaskKeeper {
         //plokka upplýsingar út úr mappinu
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            System.out.print("key: " + mentry.getKey() + " & Value: ");
-            System.out.println(mentry.getValue());
-            // System.out.println("Valúið er: " + map.get(mentry.getValue()));
+        //    System.out.print("key: " + mentry.getKey() + " & Value: ");
+        //    System.out.println(mentry.getValue());
             Counter c = (Counter) mentry.getValue();
-            System.out.println(c.getLast7Days());
+         //   System.out.println(c.getLast7Days());
         }
+     //   hmap = map;
         return map;
     }
+
+  /* public HashMap getMap(){
+        deSerialiseHashMap();
+        return hmap;
+    } */
+
+    public int countTasksToday() {
+        //TODO: telja hversu margar tasks er búið að framkvæma í dag
+        hmap = deSerialiseHashMap();
+
+        Set set = hmap.entrySet();
+        Iterator iterator = set.iterator();
+
+        Boolean stats[] = new Boolean[allTasks.length];
+        int noOfTasksDoneToday = 0;
+        while (iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry) iterator.next();
+            //    System.out.print("key: " + mentry.getKey() + " & Value: ");
+            //    System.out.println(mentry.getValue());
+            Counter c = (Counter) mentry.getValue();
+            boolean status = c.getDoneToday();
+
+           // System.out.println("ÞETTA ER búið "  + status);
+            if(status == true) {
+                noOfTasksDoneToday++;
+            }
+
+        }
+
+
+      // setBackGroundColour(noOfTasksDoneToday);
+        System.out.println("Í dag er búið að gera " + noOfTasksDoneToday + " hluti");
+        return noOfTasksDoneToday;
+    }
+
 
     public void checkDaily() {
         //TODO: send a push notification every day at a certain time

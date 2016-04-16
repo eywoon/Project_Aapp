@@ -33,12 +33,15 @@ public class Counter implements Serializable {
     }
 
     public boolean getDoneToday() {
+
         return doneToday;
     }
 
     public void setDoneToday(boolean b) {
         this.doneToday = b;
-        addToDoneList(doneToday);
+
+        //addToDoneList(doneToday);
+
     }
 
     /*
@@ -58,15 +61,15 @@ public class Counter implements Serializable {
      */
     public void addToDoneList(boolean b) {
         //TODO villumelda þetta og koma í veg fyrir svindl
-        // bætir við fremst í listann
         last7Days.add(b);
         while (last7Days.size() > 7) {
             last7Days.remove(0);
         }
+        setDoneToday(true);
     }
 
 
-    //TODO það vantar að passa að doneTOday breytist alltaf á miðnætti, líklegast aðferð hér
+    //TODO það vantar að passa að doneToday breytist alltaf á miðnætti, líklegast aðferð hér
     public void reset() {
         // kallað á úr taskkeeper, fyrir hvern key í hashmappinu
         doneToday = false;

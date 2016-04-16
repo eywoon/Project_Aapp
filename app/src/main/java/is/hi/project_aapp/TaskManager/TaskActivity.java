@@ -27,7 +27,7 @@ public class TaskActivity extends AppCompatActivity {
     private MyAdapter adapter;
     // veit ekki alveg hvernig þetta er notað
     private RecyclerView.LayoutManager mLayoutManager;
-    private  TaskKeeper tk;
+   // private  TaskKeeper tk;
 
     private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
 
@@ -46,12 +46,12 @@ public class TaskActivity extends AppCompatActivity {
 
         // á þetta að vera hér?
         // er þetta betra fyrir neðan?
-        tk = new TaskKeeper(getApplicationContext());
+      //  tk = new TaskKeeper(getApplicationContext());
 
         //ef hashmappið er minna en 7?
         // ef þetta er tekið úr fer changeBooleanValue í villu, eins og lykilinn sé ekki til
-        tk.createHashMapFirstTime();
-        HashMap hmap = tk.deSerialiseHashMap();
+       // tk.createHashMapFirstTime();
+        //HashMap hmap = tk.deSerialiseHashMap();
 
         final ArrayList<String> values = new ArrayList<String>();
 
@@ -81,6 +81,7 @@ public class TaskActivity extends AppCompatActivity {
 
 
         rw.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+                                      
                                       @Override
                                       public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent e) {
 
@@ -127,7 +128,7 @@ public class TaskActivity extends AppCompatActivity {
         //  Counter c = new Counter();
         // c.addToDoneList(b);
 
-        tk.changeBooleanValue(b, s);
+       // tk.changeBooleanValue(b, s);
 
         // HashMap hmap = tk.deSerialiseHashMap();
 
