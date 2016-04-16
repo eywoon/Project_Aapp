@@ -34,9 +34,9 @@ public class GoalListFragment extends Fragment implements View.OnClickListener {
        // takkaView.setOnClickListener(this);
 
         //container.addView(takkaView);
-        View view = inflater.inflate(R.layout.fragment_task_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_goal_list, container, false);
 
-        mGoalRecyclerView = (RecyclerView) view.findViewById(R.id.task_recycler_view);
+        mGoalRecyclerView = (RecyclerView) view.findViewById(R.id.goal_recycler_view);
         mGoalRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 

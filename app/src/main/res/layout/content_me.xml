@@ -13,6 +13,14 @@
     android:orientation="vertical"
     android:background="@color/back">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+    </android.support.design.widget.AppBarLayout>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,9 +31,9 @@
 
     <TextView
         android:text="@string/nameHolder"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/medium"
-        android:typeface="monospace"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/big"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big"
@@ -37,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/small"
+        android:textSize="@dimen/medium"
         android:layout_alignBottom="@+id/welcome"
         android:layout_marginLeft="@dimen/smallest"
         android:layout_marginBottom="@dimen/smallest"
@@ -45,9 +53,9 @@
 
     <TextView
         android:text="@string/soberdate"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/medium"
-        android:typeface="monospace"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/big"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/smallest"
@@ -61,7 +69,7 @@
         android:textColor="@color/colorPrimary"
         android:layout_marginLeft="@dimen/smallest"
         android:layout_marginBottom="@dimen/smallest"
-        android:textSize="@dimen/small"
+        android:textSize="@dimen/medium"
         android:id="@+id/soberdate" />
 
     <LinearLayout

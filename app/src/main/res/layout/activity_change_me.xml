@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-
     </android.support.design.widget.AppBarLayout>
 
     <ImageView
@@ -27,11 +26,11 @@
         android:src="@mipmap/ic_face_white_48dp"/>
 
     <TextView
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/medium"
-        android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:layout_marginTop="@dimen/big"
         android:layout_marginLeft="@dimen/smallest"
         android:layout_marginBottom="@dimen/smallest"
@@ -53,9 +52,9 @@
         />
 
     <TextView
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/medium"
-        android:typeface="monospace"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big"
@@ -68,9 +67,9 @@
         android:id="@+id/lastnam"
         android:inputType="text"
         android:hint="Jónsson"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/white"
         android:textSize="@dimen/medium"
-        android:typeface="monospace"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/nulls"
@@ -79,9 +78,9 @@
         />
 
     <TextView
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/medium"
-        android:typeface="monospace"
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big"
@@ -94,12 +93,12 @@
         android:id="@+id/dateview"
         android:text="@string/date_selected"
         android:onClick="setDate"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/medium"
-        android:typeface="monospace"
-        android:layout_width="wrap_content"
+        android:typeface="serif"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/big"
+        android:paddingRight="@dimen/biggest"
         android:layout_marginLeft="@dimen/smallest"
         android:layout_marginBottom="@dimen/smallest"
         android:drawableRight="@mipmap/ic_event_white_24dp"

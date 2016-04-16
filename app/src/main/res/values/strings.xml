@@ -75,4 +75,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="tasktexti">Ýttu á þau atriði sem þú hefur lokið við í dag</string>
+    <string name="thittMarkmid">Hvert er þitt markmið?</string>
+    <string name="lysamarkmid">Lýstu markmiði þínu nánar</string>
+    <string name="solved">Hefur þú náð markmiðinu?</string>
+    <string name="markmidatexti">Markmið</string>
+    <string name="markmidaskyring">Ýttu á takkann til að bæta við markmiði. Ýttu á markmiðið sjálft til þess að uppfæra/breyta því</string>
+
 </resources>
