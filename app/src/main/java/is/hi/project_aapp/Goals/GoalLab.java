@@ -55,7 +55,9 @@ public class GoalLab {
             cursor.close();
         }
         Goal goal = new Goal("testa", 1,2,2015, 0, 1);
+        Goal goal2 = new Goal("nr2", 1,2,2015, 0, 1);
         goals.add(goal);
+        goals.add(goal2);
         return goals;
     }
 

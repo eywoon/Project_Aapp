@@ -8,8 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -20,21 +23,31 @@ import is.hi.project_aapp.R;
 /**
  * Created by Eyrun on 11/04/16.
  */
-public class GoalListFragment extends Fragment {
+public class GoalListFragment extends Fragment implements View.OnClickListener {
     private RecyclerView mGoalRecyclerView;
     private GoalAdapter mAdapter;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //View takkaView = inflater.inflate(R.layout.takki, container, true);
+       // takkaView.setOnClickListener(this);
+
+        //container.addView(takkaView);
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
 
         mGoalRecyclerView = (RecyclerView) view.findViewById(R.id.task_recycler_view);
         mGoalRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+
+
+
         updateUI();
         return view;
+
     }
+
+
     @Override
     public void onResume(){
         super.onResume();
@@ -53,6 +66,11 @@ public class GoalListFragment extends Fragment {
             mAdapter.notifyDataSetChanged();
         }
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        System.out.println("IMPLEMENTS");
     }
 
 
@@ -88,30 +106,58 @@ public class GoalListFragment extends Fragment {
     }
 
 
-    private class GoalAdapter extends RecyclerView.Adapter<GoalHolder> {
+
+
+
+
+    private class GoalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private List<Goal> mGoals;
+
+
 
         public GoalAdapter(List<Goal> goals) {mGoals = goals;}
 
         @Override
-        public GoalHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+
+
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater.inflate(R.layout.list_item_goal, null);
+
+
+
 
             return new GoalHolder(view);
         }
 
         @Override
-        public void onBindViewHolder(GoalHolder holder, int position) {
-            Goal goal = mGoals.get(position);
-            holder.bindGoal(goal);
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+                    GoalHolder vh = (GoalHolder) holder;
+
+                    Goal goal = mGoals.get(position);
+                    vh.bindGoal(goal);
+
+
         }
 
         @Override
         public int getItemCount() {
+
+
+            // Add extra view to show the footer view
+
             return mGoals.size();
         }
 
+
+        @Override
+        public int getItemViewType(int position) {
+
+
+            return super.getItemViewType(position);
+        }
         public void setGoals(List<Goal> goals){
             mGoals = goals;
         }
