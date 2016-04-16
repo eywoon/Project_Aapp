@@ -4,7 +4,6 @@ package is.hi.project_aapp.TaskManager;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-//import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
@@ -30,14 +29,6 @@ public class TaskListFragment extends Fragment {
     private TaskAdapter mAdapter;
     private Context mContext;
     private TaskKeeper mTaskKeeper;
-
-    //= new TaskKeeper(mContext);
-
-    //?? veit ekki með þetta
-  //  private TaskLab mTaskLab;
-
-
-
 
     public void setContext(Context context) {
         mContext =  context;
@@ -93,6 +84,7 @@ public class TaskListFragment extends Fragment {
             int pos = getAdapterPosition();
             mAdapter.remove(pos);
             mTaskKeeper.changeBooleanValue(mTask.getTask(), true);
+            hmap = mTaskKeeper.deSerialiseHashMap();
             Toast.makeText(getActivity(), mTask.getTask() +  " clicked!" , Toast.LENGTH_SHORT).show();
         }
     }

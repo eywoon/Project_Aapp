@@ -1,13 +1,10 @@
 package is.hi.project_aapp;
 
-import android.app.Fragment;
 import android.os.Bundle;
-//import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.app.FragmentManager;
 
-import is.hi.project_aapp.TaskManager.TaskListFragment;
-//import android.support.v4.app.FragmentManager;
 
 /**
  * Created by Eyrun on 10/04/16.

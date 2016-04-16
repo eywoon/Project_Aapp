@@ -55,17 +55,23 @@ public class TaskKeeper {
     Context context;
     Counter c;
 
-
-
     /*
-         Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
-         það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
-         */
+     Context þarf að fylgja með frá activity-inu til þess að það sé hægt að seraliasa, s.s
+     það þarf Context til þess að geta opnað og lokað FileInput/OutputStream
+     */
     public TaskKeeper(Context context) {
         this.context = context;
-        if(hmap.isEmpty()) {
+        try {
+            System.out.println("ég reyndi að opna hashmappið");
+            hmap = deSerialiseHashMap();
+        }
+        catch (Exception exeption) {
+            System.out.println("En það var ekkert hashmap til svo ég gerði það");
             createHashMapFirstTime();
         }
+     //   if(hmap.isEmpty()) {
+      //      createHashMapFirstTime();
+     //   }
     }
 
     public String[] getAllTasks() {
@@ -73,7 +79,7 @@ public class TaskKeeper {
     }
 
     /*
-    Spurning hvort þetta þarf að vera sér aðferð sem er kallað á einhverntímann
+
      */
     public void createHashMapFirstTime() {
 
@@ -88,10 +94,6 @@ public class TaskKeeper {
                     j++;
                 }
             }
-            else{
-                //?
-            }
-
         }
         serialiseHashMap(hmap);
     }
@@ -113,7 +115,7 @@ public class TaskKeeper {
             serialiseHashMap(hmap);
             // þetta er bara til þess að skoða
            // c.setDoneToday(true);
-            System.out.println(c.getDoneToday());
+         //   System.out.println(c.getDoneToday());
          //  deSerialiseHashMap();
         }
         else {
@@ -182,12 +184,12 @@ public class TaskKeeper {
         //plokka upplýsingar út úr mappinu
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-        //    System.out.print("key: " + mentry.getKey() + " & Value: ");
-        //    System.out.println(mentry.getValue());
+         //   System.out.print("key: " + mentry.getKey() + " & Value: ");
+          //  System.out.println(mentry.getValue());
             Counter c = (Counter) mentry.getValue();
-         //   System.out.println(c.getLast7Days());
+          //  System.out.println(c.getLast7Days());
         }
-     //   hmap = map;
+      //  hmap = map;
         return map;
     }
 
@@ -196,7 +198,7 @@ public class TaskKeeper {
         return hmap;
     } */
 
-    public int countTasksToday() {
+    public int countTasksToday(int day) {
         //TODO: telja hversu margar tasks er búið að framkvæma í dag
         hmap = deSerialiseHashMap();
 
@@ -207,18 +209,13 @@ public class TaskKeeper {
         int noOfTasksDoneToday = 0;
         while (iterator.hasNext()) {
             Map.Entry mentry = (Map.Entry) iterator.next();
-            //    System.out.print("key: " + mentry.getKey() + " & Value: ");
-            //    System.out.println(mentry.getValue());
-            Counter c = (Counter) mentry.getValue();
-            boolean status = c.getDoneToday();
 
-           // System.out.println("ÞETTA ER búið "  + status);
+            Counter c = (Counter) mentry.getValue();
+            boolean status = c.getLast7Days().get(day);
             if(status == true) {
                 noOfTasksDoneToday++;
             }
-
         }
-
 
       // setBackGroundColour(noOfTasksDoneToday);
         System.out.println("Í dag er búið að gera " + noOfTasksDoneToday + " hluti");
