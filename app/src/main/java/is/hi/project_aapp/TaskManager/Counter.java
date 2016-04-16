@@ -41,6 +41,8 @@ public class Counter implements Serializable {
        // addToDoneList(doneToday);
     }
 
+
+
     /*
      * @param ArrayList - the total amount of seats to book
      * @return last7Days
