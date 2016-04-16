@@ -8,18 +8,29 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Me.MeActivity"
     tools:showIn="@layout/activity_me"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/back">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/smallest"
+        android:layout_marginTop="@dimen/smallest"
+        android:src="@mipmap/ic_face_white_48dp"/>
 
     <TextView
         android:text="@string/nameHolder"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/medium"
+        android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
         android:id="@+id/welcome"/>
 
     <TextView
@@ -28,14 +39,19 @@
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/small"
         android:layout_alignBottom="@+id/welcome"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
         android:id="@+id/name" />
 
     <TextView
         android:text="@string/soberdate"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/medium"
+        android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
         android:layout_marginTop="@dimen/big"
         android:id="@+id/soberdate1"/>
 
@@ -43,21 +59,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
         android:textSize="@dimen/small"
         android:id="@+id/soberdate" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/change"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/smallest"
+            android:layout_marginBottom="@dimen/smallest"
+            android:layout_marginRight="@dimen/smallest"
+            android:drawableRight="@mipmap/ic_mode_edit_white_48dp"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium"
+            android:textAlignment="center"
             android:id="@+id/changesponsor"
-            android:onClick="onChangeUser" />
-
+            android:onClick="onChangeUser"
+            android:text="@string/change"/>
     </LinearLayout>
 
 </LinearLayout>

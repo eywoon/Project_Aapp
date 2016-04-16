@@ -81,3 +81,7 @@ public class ChangeSponsorActivity extends AppCompatActivity {
     }
 
 }
+
+//ToDo skoda errorinn
+//04-12 19:39:59.659 1305-1321/? E/BluetoothAdapter: Bluetooth binder is null
+//04-12 19:39:59.660 1305-1321/? E/KernelCpuSpeedReader: Failed to read cpu-freq
