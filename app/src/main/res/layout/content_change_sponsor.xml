@@ -11,33 +11,84 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="is.hi.project_aapp.Sponsor.ChangeSponsorActivity"
     tools:showIn="@layout/activity_change_sponsor"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/back">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginTop="@dimen/smallest"
+        android:src="@mipmap/group_48dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/medium"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
         android:text="@string/sponsor"/>
+
+
     <EditText
         android:id="@+id/name"
-        android:layout_width="fill_parent"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Durr"
+        android:layout_marginTop="@dimen/nulls"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        android:hint="@string/name"
         android:inputType="text" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/medium"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/big"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
         android:text="Símanúmer"/>
+
     <EditText
         android:id="@+id/phoneno"
-        android:layout_width="fill_parent"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/medium"
+        android:typeface="monospace"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="000"
+        android:layout_marginTop="@dimen/nulls"
+        android:layout_marginLeft="@dimen/smallest"
+        android:layout_marginBottom="@dimen/smallest"
+        android:hint="5812345"
         android:inputType="number" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Breyta"
-        android:onClick="onClickChangeSponsor"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/takkar"
+            android:layout_marginLeft="@dimen/smallest"
+            android:layout_marginBottom="@dimen/smallest"
+            android:layout_marginRight="@dimen/smallest"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium"
+            android:textAlignment="center"
+            android:text="@string/vista"
+            android:drawableLeft="@mipmap/ic_done_white_48dp"
+            android:onClick="onClickChangeSponsor"/>
+
+        </LinearLayout>
 </LinearLayout>

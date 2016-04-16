@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/back">
+
 
     <TextView
         android:id="@+id/list_item_task_title_text_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/takkar"
         android:textStyle="bold"
-        android:paddingLeft="4dp"
-        android:paddingRight="4dp"
-        android:text="Task title"/>
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:textSize="@dimen/medium"
+        android:paddingLeft="@dimen/small"
+        android:paddingRight="@dimen/small"
+        android:paddingTop="@dimen/smallest"
+        android:layout_marginTop="@dimen/extrasmall"
+        android:textAlignment="center"
+        android:text="Task title"
+        android:drawableRight="@mipmap/ic_done_white_48dp"
+        android:paddingBottom="@dimen/smallest"/>
 
 
 </RelativeLayout>

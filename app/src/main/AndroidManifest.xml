@@ -63,8 +63,13 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_change_sponsor" />
 
-        <activity android:name=".Me.ChangeMeActivity" />
-        <activity android:name=".TaskManager.TaskListActivity"></activity>
+        <activity android:name=".Me.ChangeMeActivity"
+            android:label="ChangeMeActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".TaskManager.TaskListActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".Goals.GoalListActivity"
             android:label="@string/title_activity_goal_list"

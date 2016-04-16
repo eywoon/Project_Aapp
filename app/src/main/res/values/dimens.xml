@@ -11,4 +11,5 @@
     <dimen name="nulls">0dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab">12dp</dimen>
+    <dimen name="takkar">60dp</dimen>
 </resources>
