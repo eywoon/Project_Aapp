@@ -14,7 +14,7 @@ public class Emotions extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emotions2);
+        setContentView(R.layout.activity_me);
 
 
     }

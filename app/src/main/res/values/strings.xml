@@ -84,6 +84,7 @@
 
     <string name="title_activity_result">ResultActivity</string>
     <string name="title_activity_goal">GoalActivity</string>
+    <string name="title_newactivity_goal">NewGoalActivity</string>
 
 
     <string name="nyttmarkmid">Nýtt Markmið</string>

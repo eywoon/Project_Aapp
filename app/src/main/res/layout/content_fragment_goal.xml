@@ -49,7 +49,7 @@
             android:layout_marginTop="@dimen/small"
             android:textColor="@color/colorPrimaryDark"
             />
-        <EditText android:id="@+id/crime_detail"
+        <EditText android:id="@+id/goals_description"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:textSize="@dimen/medium"
@@ -123,6 +123,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/medium"
             android:textAlignment="center"
+            android:id="@+id/changegoal"
             android:text="@string/vista"/>
     </LinearLayout>
 </LinearLayout>

@@ -70,6 +70,11 @@
             android:label="@string/title_activity_goal"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".Goals.NewGoalActivity"
+            android:label="@string/title_newactivity_goal"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
