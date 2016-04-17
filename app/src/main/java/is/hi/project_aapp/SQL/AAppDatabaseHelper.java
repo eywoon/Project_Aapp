@@ -43,6 +43,7 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
     private static final String KEY_GOALYEAR = "GOALYEAR";
     private static final String KEY_GOALDAY = "GOALDAY";
     private static final String KEY_GOALMONTH = "GOALMONTH";
+    private static final String KEY_GOALDESRIPTION = "DESCRIPTION";
 
 
     // Table Create Statements
@@ -60,8 +61,8 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
     // Goal table create statement
     private static final String CREATE_TABLE_GOALS = "CREATE TABLE "
             + TABLE_GOALS + "(" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_GOAL
-            + " TEXT, " + KEY_GOALDAY + " INTEGER," + KEY_GOALMONTH + " INTEGER,"
-            + KEY_GOALYEAR+" INTEGER, " + KEY_ISDONE+" INTEGER"+ ");";
+            + " TEXT, " + KEY_GOALDESRIPTION + " TEXT, " + KEY_GOALDAY + " INTEGER," + KEY_GOALMONTH
+            + " INTEGER," + KEY_GOALYEAR+" INTEGER, " + KEY_ISDONE+" INTEGER"+ ");";
 
 
 
@@ -108,6 +109,7 @@ public class AAppDatabaseHelper extends SQLiteOpenHelper{
 
         ContentValues goalValues = new ContentValues();
         goalValues.put("GOAL", "Markmið");
+        goalValues.put("DESCRIPTION", "Nánari lýsing á markmiðinu");
         goalValues.put("GOALDAY", 01);
         goalValues.put("GOALMONTH", 01);
         goalValues.put("GOALYEAR", 1970);

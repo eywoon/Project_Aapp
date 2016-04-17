@@ -23,7 +23,7 @@ import is.hi.project_aapp.R;
 /**
  * Created by Eyrun on 11/04/16.
  */
-public class GoalListFragment extends Fragment implements View.OnClickListener {
+public class GoalListFragment extends Fragment  {
     private RecyclerView mGoalRecyclerView;
     private GoalAdapter mAdapter;
 
@@ -68,10 +68,6 @@ public class GoalListFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    @Override
-    public void onClick(View v) {
-        System.out.println("IMPLEMENTS");
-    }
 
 
     private class GoalHolder extends RecyclerView.ViewHolder implements View.OnClickListener{

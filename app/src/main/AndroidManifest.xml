@@ -8,7 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -60,21 +59,23 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sponsor.ChangeSponsorActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_change_sponsor" />
-
-        <activity android:name=".Me.ChangeMeActivity"
+            android:label="@string/title_activity_change_sponsor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Me.ChangeMeActivity"
             android:label="ChangeMeActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity android:name=".TaskManager.TaskListActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TaskManager.TaskListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Goals.GoalListActivity"
             android:label="@string/title_activity_goal_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Goals.NewGoalActivity"
+            android:label="@string/title_activity_new_goal"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-
     </application>
 
 </manifest>

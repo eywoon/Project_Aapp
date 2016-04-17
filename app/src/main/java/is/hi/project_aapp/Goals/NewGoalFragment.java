@@ -30,7 +30,7 @@ import is.hi.project_aapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class GoalFragment extends Fragment {
+public class NewGoalFragment extends Fragment {
     private Goal mGoal;
     private EditText mTitleField;
     private EditText mDescriptionField;
@@ -41,7 +41,7 @@ public class GoalFragment extends Fragment {
     private static final int REQUEST_DATE = 0;
 
 
-    public GoalFragment() {
+    public NewGoalFragment() {
         // Required empty public constructor
     }
 
@@ -51,19 +51,23 @@ public class GoalFragment extends Fragment {
 
         GoalLab.get(getActivity()).updateGoal(mGoal);
     }
-    public static GoalFragment newInstance(int goalId){
+    public static NewGoalFragment newInstance(int goalId){
+        System.out.println("ÉG FÓR Í NEWGOAL");
+
         Bundle args = new Bundle();
         args.putInt("ID", goalId);
 
-        GoalFragment fragment = new GoalFragment();
+        NewGoalFragment fragment = new NewGoalFragment();
         fragment.setArguments(args);
         return fragment;
+
+
     }
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         int goalId = (int) getArguments().getInt("ID",0);
-        mGoal = GoalLab.get(getActivity()).getGoal(goalId);
+        mGoal = new Goal();
     }
 
 
@@ -72,7 +76,7 @@ public class GoalFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_goal, container, false);
         mDescriptionField = (EditText) v.findViewById(R.id.goals_description);
-        mDescriptionField.setText(mGoal.getDescription());
+        //mDescriptionField.setText(mGoal.getDescription());
         mDescriptionField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -93,7 +97,7 @@ public class GoalFragment extends Fragment {
 
 
         mTitleField = (EditText) v.findViewById(R.id.crime_title);
-        mTitleField.setText(mGoal.getGoal());
+        //mTitleField.setText(mGoal.getGoal());
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -119,8 +123,8 @@ public class GoalFragment extends Fragment {
             @Override
             public void onClick(View v){
                 FragmentManager manager = getActivity().getFragmentManager();
-                DatePickerFragment dialog = DatePickerFragment.newInstance(mGoal.getGoalYear(), mGoal.getGoalMonth(), mGoal.getGoalDay());
-                dialog.setTargetFragment(GoalFragment.this, REQUEST_DATE);
+                DatePickerFragment dialog = DatePickerFragment.newInstance(2016, 1, 1);
+                dialog.setTargetFragment(NewGoalFragment.this, REQUEST_DATE);
                 dialog.show(manager, DIALOG_DATE);
             }
         });
@@ -128,7 +132,7 @@ public class GoalFragment extends Fragment {
 
 
         mIsDoneCheckBox = (CheckBox) v.findViewById(R.id.crime_solved);
-        mIsDoneCheckBox.setChecked(mGoal.isDone());
+        mIsDoneCheckBox.setChecked(false);
         mIsDoneCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -140,7 +144,8 @@ public class GoalFragment extends Fragment {
         mChangeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                GoalLab.get(getActivity()).updateGoal(mGoal);
+                //TODO insert goal
+                GoalLab.get(getActivity()).addGoal(mGoal);
                 Intent intent = new Intent(getActivity(), GoalListActivity.class);
                 startActivity(intent);
             }
@@ -155,15 +160,15 @@ public class GoalFragment extends Fragment {
             return;
         }
         if (requestCode == REQUEST_DATE){
-            Date date = (Date) data.getSerializableExtra("date");
+            //Date date = (Date) data.getSerializableExtra("date");
             Calendar calendar = Calendar.getInstance();
-            calendar.setTime(date);
+            //calendar.setTime(date);
             int year = calendar.get(Calendar.YEAR);
             int month = calendar.get(Calendar.MONTH);
             int day = calendar.get(Calendar.DAY_OF_MONTH);
 
             mGoal.setGoalDay(day);
-            mGoal.setGoalMonth(month);
+            mGoal.setGoalMonth(month-1);
             mGoal.setGoalYear(year);
             updateDate();
 

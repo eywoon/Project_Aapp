@@ -49,7 +49,7 @@
             android:layout_marginTop="@dimen/small"
             android:textColor="@color/colorPrimaryDark"
             />
-        <EditText android:id="@+id/crime_detail"
+        <EditText android:id="@+id/goals_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="@dimen/medium"
@@ -88,13 +88,12 @@
             android:layout_marginTop="@dimen/small"
             android:textColor="@color/colorPrimaryDark"
             android:text="@string/solved"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/small"
             />
 
         <CheckBox android:id="@+id/crime_solved"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:enabled="false"
             android:buttonTint="@color/colorAccent"
             android:layout_alignParentRight="true"
             android:layout_margin="@dimen/extrasmall"
@@ -114,6 +113,7 @@
 
         <Button
             android:layout_width="fill_parent"
+            android:id="@+id/changegoal"
             android:layout_height="60dp"
             android:layout_marginLeft="@dimen/smallest"
             android:layout_marginBottom="@dimen/smallest"

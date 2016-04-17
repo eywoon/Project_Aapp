@@ -10,20 +10,23 @@ import android.widget.Toast;
 import is.hi.project_aapp.SingleFragmentActivity;
 import is.hi.project_aapp.TaskManager.TaskListFragment;
 
-public class GoalActivity extends SingleFragmentActivity {
+public class NewGoalActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
         int goalId = (int) getIntent().getIntExtra("ID", 0);
-        return GoalFragment.newInstance(goalId);
+        return NewGoalFragment.newInstance(goalId);
     }
 
     public static Intent newIntent(Context packageContext, int goalId){
-        Intent intent = new Intent(packageContext, GoalActivity.class);
-        intent.putExtra("ID", goalId);
+        Intent intent = new Intent(packageContext, NewGoalActivity.class);
+        intent.putExtra("ID", 1);
         return intent;
     }
 
 
 
+
+
 }
+
