@@ -82,4 +82,5 @@
     <string name="markmidatexti">Markmið</string>
     <string name="markmidaskyring">Ýttu á takkann til að bæta við markmiði. Ýttu á markmiðið sjálft til þess að uppfæra/breyta því</string>
     <string name="nyttmarkmid">Nýtt Markmið</string>
+    <string name="title_activity_new_goal">NewGoalActivity</string>
 </resources>
