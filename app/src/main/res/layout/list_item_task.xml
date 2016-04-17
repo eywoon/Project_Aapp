@@ -12,7 +12,7 @@
         android:textStyle="bold"
         android:background="@color/colorAccent"
         android:textColor="@color/white"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:paddingLeft="@dimen/small"
         android:paddingRight="@dimen/small"
         android:paddingTop="@dimen/smallest"

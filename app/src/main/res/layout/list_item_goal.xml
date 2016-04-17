@@ -24,7 +24,7 @@
               android:layout_marginTop="@dimen/extrasmall"
               android:textStyle="bold"
               android:textColor="@color/colorPrimaryDark"
-              android:textSize="@dimen/medium"
+              android:textSize="@dimen/mediumtext"
               android:paddingLeft="4dp"
               android:paddingRight="4dp"
               android:text="Crime title" />
@@ -33,7 +33,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:textColor="@color/colorPrimary"
-              android:textSize="@dimen/small"
+              android:textSize="@dimen/smalltext"
               android:layout_below="@id/list_item_goal_title_text_view"
               android:layout_toLeftOf="@id/list_item_goal_solved_checkBox"
               android:layout_marginLeft="@dimen/extrasmall"

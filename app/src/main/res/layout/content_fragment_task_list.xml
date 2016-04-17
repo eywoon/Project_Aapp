@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/tasktexti"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"

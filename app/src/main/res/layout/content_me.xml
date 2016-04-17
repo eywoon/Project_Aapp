@@ -32,7 +32,7 @@
     <TextView
         android:text="@string/nameHolder"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/big"
+        android:textSize="@dimen/bigtext"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:layout_alignBottom="@+id/welcome"
         android:layout_marginLeft="@dimen/smallest"
         android:layout_marginBottom="@dimen/smallest"
@@ -54,7 +54,7 @@
     <TextView
         android:text="@string/soberdate"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/big"
+        android:textSize="@dimen/bigtext"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
         android:textColor="@color/colorPrimary"
         android:layout_marginLeft="@dimen/smallest"
         android:layout_marginBottom="@dimen/smallest"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:id="@+id/soberdate" />
 
     <LinearLayout
@@ -87,7 +87,7 @@
             android:drawableRight="@mipmap/ic_mode_edit_white_48dp"
             android:backgroundTint="@color/colorAccent"
             android:textColor="@color/white"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/mediumtext"
             android:textAlignment="center"
             android:id="@+id/changesponsor"
             android:onClick="onChangeUser"

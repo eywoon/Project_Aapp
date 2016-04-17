@@ -20,8 +20,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fjöldi lokinna atriða síðustu vikuna"
-            android:textSize="@dimen/big"
+            android:text="@string/resulttext"
+            android:textSize="@dimen/bigtext"
             android:textColor="@color/colorPrimaryDark"
             android:textAlignment="center"        />
 
