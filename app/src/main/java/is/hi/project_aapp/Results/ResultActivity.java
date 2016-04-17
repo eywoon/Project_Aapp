@@ -22,15 +22,7 @@ import is.hi.project_aapp.SingleFragmentActivity;
 
 public class ResultActivity extends SingleFragmentActivity {
 
-
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results);
-    } */
-
-
-   @Override
+    @Override
     protected Fragment createFragment() {
         return new ResultFragment();
     }

@@ -39,7 +39,7 @@ public class ResultFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.result_layout, container, false);
+        View view = inflater.inflate(R.layout.activity_result, container, false);
         mTaskKeeper = new TaskKeeper(getActivity().getApplicationContext());
 
         BarChart chart = (BarChart) view.findViewById(R.id.chart);
@@ -77,7 +77,6 @@ public class ResultFragment extends Fragment {
             System.out.println(c.getLast7Days());
             System.out.println(c.getLast7Days().get(5));
         }
-
     }
 
     public ArrayList<String> getXAxisValues() {
@@ -129,8 +128,6 @@ public class ResultFragment extends Fragment {
 
 
     public BarDataSet getDataSet() {
-
-     //   mTaskKeeper.countTasksToday();
         ArrayList<BarEntry> entries = new ArrayList<>();
         entries.add(new BarEntry(mTaskKeeper.countTasksToday(0), 0));
         entries.add(new BarEntry(mTaskKeeper.countTasksToday(1), 1));
@@ -141,13 +138,8 @@ public class ResultFragment extends Fragment {
         entries.add(new BarEntry(mTaskKeeper.countTasksToday(6), 5));
 
         BarDataSet dataSet = new BarDataSet(entries, "Fjöldi lokinna atriða");
-        dataSet.setColor(Color.rgb(0, 155, 0));
-
+        dataSet.setColor(Color.argb(255,215,58,49));
 
         return dataSet;
     }
-
-
-
-
 }

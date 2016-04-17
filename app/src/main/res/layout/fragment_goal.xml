@@ -1,128 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/nulls"
-    android:paddingRight="@dimen/nulls"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:background="@color/back"
-    >
+    android:fitsSystemWindows="true"
+    tools:context=".Goals.GoalActivity">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/extrasmall"
-        android:layout_marginRight="@dimen/extrasmall"
-        android:layout_marginTop="@dimen/extrasmall"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/thittMarkmid"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/medium"
-            android:layout_weight="1"
-            android:id="@+id/markmidtexti"
-            />
-
-        <EditText android:id="@+id/crime_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/medium"
-            android:hint="Heimsækja 5 ný lönd"
-            android:layout_weight="1"
-            />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/medium"
-            android:textStyle="bold"
-            android:text="@string/lysamarkmid"
-            android:layout_marginTop="@dimen/small"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <EditText android:id="@+id/crime_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/medium"
-            android:hint="Ég vil ferðast og öðlast meiri reynslu og upplifa nýja hluti"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/medium"
-            android:textStyle="bold"
-            android:text="Tímasettu markmiðið þitt"
-            android:layout_marginTop="@dimen/small"
-            android:textColor="@color/colorPrimaryDark"/>
-
-        <Button android:id="@+id/crime_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="@dimen/medium"
-            android:drawableTint="@color/white"
-            android:layout_marginTop="@dimen/extrasmall"
-            android:drawableRight="@mipmap/ic_event_white_24dp"
-            android:padding="@dimen/small"
-            android:background="@color/back"
-            />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="@string/solved"
-            android:textSize="@dimen/medium"
-            />
-
-        <CheckBox android:id="@+id/crime_solved"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:buttonTint="@color/colorAccent"
-            android:layout_alignParentRight="true"
-            android:layout_margin="@dimen/extrasmall"
-            android:scaleX="2"
-            android:scaleY="2"
-            />
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <LinearLayout
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:gravity="center|bottom">
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="@dimen/smallest"
-            android:layout_marginBottom="@dimen/smallest"
-            android:layout_marginRight="@dimen/smallest"
-            android:drawableRight="@mipmap/ic_mode_edit_white_48dp"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/white"
-            android:textSize="@dimen/medium"
-            android:textAlignment="center"
-            android:text="@string/vista"/>
-    </LinearLayout>
-</LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_fragment_goal"/>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -9,15 +9,13 @@ import java.util.List;
 /**
  * Created by Eyrun on 10/04/16.
  * This is a singleton class
+ * Creates the data for the adapter
  */
 public class TaskLab {
     private static TaskLab sTaskLab;
     private List<Task> tasks;
     private String[] allTasks;
-//    private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
     private TaskKeeper mTaskKeeper;
-
-
 
     public static TaskLab get(Context context) {
         if(sTaskLab == null) {
@@ -31,7 +29,6 @@ public class TaskLab {
         mTaskKeeper = new TaskKeeper(context);
         allTasks = mTaskKeeper.getAllTasks();
 
-      // fyllir inn í arraylistann
        for(String i : allTasks) {
           Task task = new Task(i, true);
           tasks.add(task);

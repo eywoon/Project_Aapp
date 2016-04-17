@@ -10,14 +10,14 @@
                 tools:context=".MainActivity"
                 android:background="@color/back">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:background="@color/back"
-            >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@color/back"
+        >
 
-                <TextView
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Fjöldi lokinna atriða síðustu vikuna"
@@ -34,7 +34,7 @@
             android:background="@color/white"
             android:layout_gravity="bottom|center"/>
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

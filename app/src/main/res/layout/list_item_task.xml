@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:background="@color/back">
 
-
     <TextView
         android:id="@+id/list_item_task_title_text_view"
         android:layout_width="match_parent"

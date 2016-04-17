@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="is.hi.project_aapp">
+<manifest package="is.hi.project_aapp"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -8,73 +8,68 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-        <activity
-            android:name=".TaskManager.TaskActivity"
-            android:label="@string/title_activity_task"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sponsor.SponsorActivity"
             android:label="@string/title_activity_sponsor"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Steps.StepsActivity"
             android:label="@string/title_activity_steps"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Help.Help"
             android:label="@string/title_activity_help"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Results.ResultActivity"
-            android:label="@string/title_activity_results"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Goals.GoalActivity"
-            android:label="@string/title_activity_goals"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Emotions.Emotions"
             android:label="@string/title_activity_emotions"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Me.MeActivity"
             android:label="@string/title_activity_me"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Settings.Settings"
             android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Sponsor.ChangeSponsorActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_change_sponsor" />
-
-        <activity android:name=".Me.ChangeMeActivity"
+            android:label="@string/title_activity_change_sponsor"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Me.ChangeMeActivity"
             android:label="ChangeMeActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
-        <activity android:name=".TaskManager.TaskListActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".TaskManager.TaskListActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Goals.GoalListActivity"
             android:label="@string/title_activity_goal_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Results.ResultActivity"
+            android:label="@string/title_activity_result"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Goals.GoalActivity"
+            android:label="@string/title_activity_goal"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
