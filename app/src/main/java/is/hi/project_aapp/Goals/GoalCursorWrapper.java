@@ -19,12 +19,13 @@ public class GoalCursorWrapper extends CursorWrapper{
     public Goal getGoal(){
         int id = getInt(getColumnIndex("_id"));
         String title = getString(getColumnIndex("GOAL"));
+        String description = getString(getColumnIndex("DESCRIPTION"));
         int goalDay = getInt(getColumnIndex("GOALDAY"));
         int goalMonth = getInt(getColumnIndex("GOALMONTH"));
         int goalYear = getInt(getColumnIndex("GOALYEAR"));
         int isDone = getInt(getColumnIndex("ISDONE"));
 
-        Goal goal = new Goal(title, goalDay, goalMonth, goalYear, isDone, id );
+        Goal goal = new Goal(title, description, goalDay, goalMonth, goalYear, isDone, id );
         return goal;
     }
 }
