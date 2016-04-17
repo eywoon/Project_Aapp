@@ -34,12 +34,32 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/goal_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="@dimen/small"
         android:background="@color/back"
-        android:layout_alignParentBottom="true">
+        >
 
     </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="@dimen/smallest"
+            android:layout_marginBottom="@dimen/smallest"
+            android:layout_marginRight="@dimen/smallest"
+            android:drawableRight="@mipmap/ic_add_circle_outline_white_48dp"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/medium"
+            android:textAlignment="center"
+            android:text="@string/nyttmarkmid"/>
+    </LinearLayout>
 
 
 

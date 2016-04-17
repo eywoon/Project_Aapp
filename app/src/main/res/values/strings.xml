@@ -81,5 +81,5 @@
     <string name="solved">Hefur þú náð markmiðinu?</string>
     <string name="markmidatexti">Markmið</string>
     <string name="markmidaskyring">Ýttu á takkann til að bæta við markmiði. Ýttu á markmiðið sjálft til þess að uppfæra/breyta því</string>
-
+    <string name="nyttmarkmid">Nýtt Markmið</string>
 </resources>

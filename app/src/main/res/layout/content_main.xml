@@ -80,7 +80,8 @@
             android:orientation="vertical"
             android:layout_weight="50"
             android:layout_centerHorizontal="true"
-            android:background="@color/colorAccent">
+            android:background="@color/colorAccent"
+            >
 
 
         <TableRow
