@@ -1,128 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="is.hi.project_aapp.Me.ChangeMeActivity"
-    android:orientation="vertical"
-    android:background="@color/back">
+    android:fitsSystemWindows="true"
+    tools:context="Me.ChangeMeActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+
     </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:layout_marginTop="@dimen/smallest"
-        android:src="@mipmap/ic_face_white_48dp"/>
+    <include layout="@layout/content_change_me"/>
 
-    <TextView
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/big"
-        android:layout_marginLeft="@dimen/smallest"
-        android:layout_marginBottom="@dimen/smallest"
-        android:text="@string/firstname"
-/>
 
-    <EditText
-        android:id="@+id/firstname"
-        android:hint="Jón"
-        android:inputType="text"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/medium"
-        android:typeface="monospace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/nulls"
-        android:layout_marginLeft="@dimen/smallest"
-        android:layout_marginBottom="@dimen/smallest"
-        />
 
-    <TextView
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/medium"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/big"
-        android:layout_marginLeft="@dimen/smallest"
-        android:layout_marginBottom="@dimen/smallest"
-        android:text="@string/lastname"
-        />
-
-    <EditText
-        android:id="@+id/lastnam"
-        android:inputType="text"
-        android:hint="Jónsson"
-        android:textColor="@color/white"
-        android:textSize="@dimen/medium"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/nulls"
-        android:layout_marginLeft="@dimen/smallest"
-        android:layout_marginBottom="@dimen/smallest"
-        />
-
-    <TextView
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/medium"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/big"
-        android:layout_marginLeft="@dimen/smallest"
-        android:layout_marginBottom="@dimen/smallest"
-        android:text="@string/soberdate"
-        />
-
-    <TextView
-        android:id="@+id/dateview"
-        android:text="@string/date_selected"
-        android:onClick="setDate"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/medium"
-        android:typeface="serif"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="@dimen/biggest"
-        android:layout_marginLeft="@dimen/smallest"
-        android:layout_marginBottom="@dimen/smallest"
-        android:drawableRight="@mipmap/ic_event_white_24dp"
-        android:backgroundTint="@color/colorPrimary"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"
-        android:gravity="center|bottom">
-
-        <Button
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="@dimen/smallest"
-            android:layout_marginBottom="@dimen/smallest"
-            android:layout_marginRight="@dimen/smallest"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="@color/white"
-            android:textSize="@dimen/medium"
-            android:textAlignment="center"
-            android:text="@string/vista"
-            android:onClick="onClickChangeMe"
-            android:drawableLeft="@mipmap/ic_done_white_48dp"/>
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

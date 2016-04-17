@@ -14,11 +14,15 @@ import is.hi.project_aapp.R;
 import is.hi.project_aapp.SingleFragmentActivity;
 import is.hi.project_aapp.TaskManager.TaskListFragment;
 
-public class Help extends SingleFragmentActivity {
+public class Help extends AppCompatActivity {
     @Override
-    protected TaskListFragment createFragment(){
-       /* TaskKeeper tk = new TaskKeeper(getApplicationContext());
-        tk.createHashMapFirstTime(); */
-        return new TaskListFragment();
+    protected void onCreate(Bundle savedInstanceState) {
+        /*
+        prufa fyrir notifications
+         */
+        super.onCreate(savedInstanceState);
+       // setContentView(R.layout.activity_settings);
+
     }
+
 }

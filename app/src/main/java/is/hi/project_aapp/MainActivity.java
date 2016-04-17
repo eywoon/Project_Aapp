@@ -11,11 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-import java.util.Formatter;
-
 import org.joda.time.*;
-import org.joda.time.format.PeriodFormatter;
 
 
 import is.hi.project_aapp.Emotions.Emotions;
@@ -26,9 +22,9 @@ import is.hi.project_aapp.Results.ResultActivity;
 import is.hi.project_aapp.SQL.AAppDatabaseHelper;
 import is.hi.project_aapp.Settings.Settings;
 import is.hi.project_aapp.Steps.StepsActivity;
-import is.hi.project_aapp.TaskManager.TaskActivity;
 
 import is.hi.project_aapp.Sponsor.SponsorActivity;
+import is.hi.project_aapp.TaskManager.TaskListActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -115,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
     public void onSponsorClick(View view){
         Intent intent = new Intent(this, SponsorActivity.class);
         startActivity(intent);
-
     }
 
 
@@ -125,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onTasksClick(View view){
-        Intent intent = new Intent(this, TaskActivity.class);
+        Intent intent = new Intent(this, TaskListActivity.class);
         startActivity(intent);
     }
 

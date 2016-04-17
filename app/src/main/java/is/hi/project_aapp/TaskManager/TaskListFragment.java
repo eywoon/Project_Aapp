@@ -38,7 +38,6 @@ public class TaskListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         mTaskKeeper =  new TaskKeeper(getActivity().getApplicationContext());
-       // mTaskKeeper.createHashMapFirstTime();
         mTaskKeeper.deSerialiseHashMap();
 
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
@@ -57,11 +56,9 @@ public class TaskListFragment extends Fragment {
 
         mAdapter = new TaskAdapter(tasks);
         mTaskRecyclerView.setAdapter(mAdapter);
-
     }
 
     // inner ViewHolder class
-    //viewholder heldur utan um hvert atriði í listanum (held ég)
     private class TaskHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
         private Task mTask;
         private TextView mTitleTextView;
@@ -70,6 +67,7 @@ public class TaskListFragment extends Fragment {
         public TaskHolder(View itemView) {
             super(itemView);
 
+            //sets the list item view
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_task_title_text_view);
             itemView.setOnClickListener(this);
         }
