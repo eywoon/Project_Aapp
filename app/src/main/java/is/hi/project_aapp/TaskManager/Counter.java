@@ -66,7 +66,9 @@ public class Counter implements Serializable {
         last7Days.add(b);
         while (last7Days.size() > 7) {
             last7Days.remove(0);
+
         }
+        last7Days.add(false);
         setDoneToday(true);
     }
 

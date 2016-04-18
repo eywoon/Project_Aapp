@@ -129,13 +129,13 @@ public class ResultFragment extends Fragment {
 
     public BarDataSet getDataSet() {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(mTaskKeeper.countTasksToday(0), 0));
-        entries.add(new BarEntry(mTaskKeeper.countTasksToday(1), 1));
-        entries.add(new BarEntry(mTaskKeeper.countTasksToday(2), 2));
+        entries.add(new BarEntry(mTaskKeeper.countTasksToday(0), 6));
+        entries.add(new BarEntry(mTaskKeeper.countTasksToday(1), 5));
+        entries.add(new BarEntry(mTaskKeeper.countTasksToday(2), 4));
         entries.add(new BarEntry(mTaskKeeper.countTasksToday(3), 3));
-        entries.add(new BarEntry(mTaskKeeper.countTasksToday(4), 4));
-        entries.add(new BarEntry(mTaskKeeper.countTasksToday(5), 5));
-        entries.add(new BarEntry(mTaskKeeper.countTasksToday(6), 5));
+        entries.add(new BarEntry(mTaskKeeper.countTasksToday(4), 2));
+        entries.add(new BarEntry(mTaskKeeper.countTasksToday(5), 1));
+        entries.add(new BarEntry(mTaskKeeper.countTasksToday(6), 0));
 
         BarDataSet dataSet = new BarDataSet(entries, "Fjöldi lokinna atriða");
         dataSet.setColor(Color.argb(255,215,58,49));

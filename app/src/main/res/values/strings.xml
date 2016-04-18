@@ -98,11 +98,11 @@
     <string name="saemo">1. Sæmilega</string>
     <string name="mjogilla">0. Mjög Illa</string>
     <string name="appname">Aapp</string>
-    <string name ="hjalp1"> hjálpar þér að halda rútínu og hafa stjórn á fíkn þinni.  </string>
+    <string name ="hjalp1"> AApp hjálpar þér að halda rútínu og hafa stjórn á fíkn þinni.  </string>
     <string name ="hjalp2">Ýttu á "ÉG" á forsíðu appsins til að frumstilla appið svo þú getir nýtt þér teljarann á forsíðunni.</string>
     <string name="hjalp3">Ýttu á "DAGBÓK" til að fylla út atriði dagsins og skoðaðu árangur þinn í "ÁRANGUR </string>
     <string name="hjalp4">Settu þér SMART markmið með því að ýta á "MARKMIÐ" takkann á forsíðunni.</string>
-    <string name="hjalp5">Haltu svo fokkking kjafti og fáðu þér vín</string>
+    <string name="hjalp5"></string>
     <string name="comingSoon">Stillingarmöguleikar koma von bráðar.</string>
     <string name="resulttext">Fjöldi atriða sem þú hefur lokið við síðustu vikuna</string>
 
