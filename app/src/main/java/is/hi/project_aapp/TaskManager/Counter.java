@@ -15,13 +15,6 @@ import java.util.ArrayList;
  */
 public class Counter implements Serializable {
 
-    /*
-    ============ JÆJA KRAKKAR!!!
-    Athugið að í augnablikinu er ég ljótur hlutur :'(
-
-     */
-
-
     //instance variables
     private boolean doneToday = false;
     //last7Days keeps a list of seven booleans that can be done or not done
@@ -43,8 +36,6 @@ public class Counter implements Serializable {
         //addToDoneList(doneToday);
 
     }
-
-
 
     /*
      * @param ArrayList - the total amount of seats to book
@@ -71,7 +62,7 @@ public class Counter implements Serializable {
     }
 
 
-    //TODO það vantar að passa að doneToday breytist alltaf á miðnætti, líklegast aðferð hér
+    //TODO það vantar að passa að doneToday breytist alltaf á miðnætti
     public void reset() {
         // kallað á úr taskkeeper, fyrir hvern key í hashmappinu
         doneToday = false;
