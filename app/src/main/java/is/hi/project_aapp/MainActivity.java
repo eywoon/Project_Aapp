@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateView(){
-        //Create a cursor
+        //Create a cursor.
         try {
             SQLiteOpenHelper aappDatabaseHelper = new AAppDatabaseHelper(this);
             SQLiteDatabase db = aappDatabaseHelper.getReadableDatabase();
@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SponsorActivity.class);
         startActivity(intent);
     }
-
 
     public void onSettingsClick(View view){
         Intent intent = new Intent(this, Settings.class);
