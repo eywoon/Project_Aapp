@@ -20,8 +20,6 @@ public class Counter implements Serializable {
     //last7Days keeps a list of seven booleans that can be done or not done
     private ArrayList<Boolean> last7Days = new ArrayList<Boolean>();
 
-
-    // right now this is just a piece of bull
     public Counter() {
     }
 
@@ -32,9 +30,6 @@ public class Counter implements Serializable {
 
     public void setDoneToday(boolean b) {
         this.doneToday = b;
-
-        //addToDoneList(doneToday);
-
     }
 
     /*
