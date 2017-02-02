@@ -5,7 +5,6 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 /**
  * Created by Eyrun on 10/04/16.
  * This is a singleton class
