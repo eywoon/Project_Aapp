@@ -21,7 +21,7 @@ public class Help extends AppCompatActivity {
         prufa fyrir notifications
          */
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_settings);
+       setContentView(R.layout.activity_help);
 
     }
 

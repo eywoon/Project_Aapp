@@ -19,7 +19,7 @@
         android:text="@string/results"
         android:textAllCaps="true"
         android:textColor="@color/colorAccent"
-        android:textSize="@dimen/biggest"
+        android:textSize="@dimen/biggesttext"
         android:textAlignment="center"
         />
 

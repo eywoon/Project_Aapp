@@ -30,9 +30,9 @@ public class SponsorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sponsor);
 
+    }
 
-
-
+    public void updateView() {
         //Create a cursor
         try {
             SQLiteOpenHelper aappDatabaseHelper = new AAppDatabaseHelper(this);
@@ -40,26 +40,35 @@ public class SponsorActivity extends AppCompatActivity {
             Cursor cursor = db.query("SPONSOR",
                     new String[]{"NAME", "PHONENO"},
                     null, null, null, null, null);
-            if(cursor.moveToFirst()){
+            if (cursor.moveToFirst()) {
                 //Get the drink details from the cursor
                 String nameText = cursor.getString(0);
                 int phoneNoText = cursor.getInt(1);
 
                 sponsor = new Sponsor(nameText, phoneNoText);
                 //Populate the drink name
-                TextView name = (TextView)findViewById(R.id.name);
+                TextView name = (TextView) findViewById(R.id.name);
                 name.setText(nameText);
-                TextView phoneNo = (TextView)findViewById(R.id.phoneno);
+                TextView phoneNo = (TextView) findViewById(R.id.phoneno);
                 phoneNo.setText(Integer.toString(phoneNoText));
             }
             cursor.close();
             db.close();
-        }
-        catch (SQLiteException e){
+        } catch (SQLiteException e) {
             Toast toast = Toast.makeText(this, "VESEN", Toast.LENGTH_SHORT);
             toast.show();
         }
     }
+
+    protected void onResume()
+    {
+        super.onResume();
+        updateView();
+    }
+
+
+
+
 
     public void onCallSponsor(View view){
         Intent callIntent = new Intent(Intent.ACTION_DIAL);

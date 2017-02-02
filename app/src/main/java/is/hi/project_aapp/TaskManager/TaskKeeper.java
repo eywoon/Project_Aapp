@@ -43,7 +43,7 @@ import android.content.Context;
 
 public class TaskKeeper {
 
-    private String[] allTasks = new String[]{"vakna", "sofa", "borda", "tala", "syngja", "dansa", "flippa"};
+    private String[] allTasks = new String[]{"Ég vaknaði á réttum tíma", "Ég stundaði hugleiðslu", "Ég var kurteisi", "Ég vann húsverk", "Ég skrifaði í dagbókina", "Ég fór í bað", "Það var hreint í hjá mér", "Ég las AA bókina", "Ég stundaði áhugamál", "Ég var til fyrirmyndar", "Ég sofnaði fyrir miðnætti"};
     //instance variables
     //hmap has a String key and keeps track of the Counter objects
     HashMap<String, Counter> hmap = new HashMap<String, Counter>();

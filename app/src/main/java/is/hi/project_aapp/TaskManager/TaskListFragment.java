@@ -83,7 +83,7 @@ public class TaskListFragment extends Fragment {
             mAdapter.remove(pos);
             mTaskKeeper.changeBooleanValue(mTask.getTask(), true);
             hmap = mTaskKeeper.deSerialiseHashMap();
-            Toast.makeText(getActivity(), mTask.getTask() +  " clicked!" , Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), mTask.getTask() +  " clicked!" , Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -81,7 +81,31 @@
     <string name="solved">Hefur þú náð markmiðinu?</string>
     <string name="markmidatexti">Markmið</string>
     <string name="markmidaskyring">Ýttu á takkann til að bæta við markmiði. Ýttu á markmiðið sjálft til þess að uppfæra/breyta því</string>
+
     <string name="title_activity_result">ResultActivity</string>
     <string name="title_activity_goal">GoalActivity</string>
+    <string name="title_newactivity_goal">NewGoalActivity</string>
+
+
+    <string name="nyttmarkmid">Nýtt Markmið</string>
+    <string name="title_activity_new_goal">NewGoalActivity</string>
+    <string name="demo">Dummy útgáfa</string>
+    <string name="emotionque">Farðu yfir daginn í dag. Hvernig hefur þú tekist á við </string>
+    <string name="anger">Reiði?</string>
+    <string name="mjogvel">4. Mjög vel</string>
+    <string name="vel">3. Vel</string>
+    <string name="ago">2. blabla</string>
+    <string name="saemo">1. Sæmilega</string>
+    <string name="mjogilla">0. Mjög Illa</string>
+    <string name="appname">Aapp</string>
+    <string name ="hjalp1"> AApp hjálpar þér að halda rútínu og hafa stjórn á fíkn þinni.  </string>
+    <string name ="hjalp2">Ýttu á "ÉG" á forsíðu appsins til að frumstilla appið svo þú getir nýtt þér teljarann á forsíðunni.</string>
+    <string name="hjalp3">Ýttu á "DAGBÓK" til að fylla út atriði dagsins og skoðaðu árangur þinn í "ÁRANGUR </string>
+    <string name="hjalp4">Settu þér SMART markmið með því að ýta á "MARKMIÐ" takkann á forsíðunni.</string>
+    <string name="hjalp5"></string>
+    <string name="comingSoon">Stillingarmöguleikar koma von bráðar.</string>
+    <string name="resulttext">Fjöldi atriða sem þú hefur lokið við síðustu vikuna</string>
+
+
 
 </resources>

@@ -26,7 +26,7 @@
             android:text="@string/thittMarkmid"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/mediumtext"
             android:layout_weight="1"
             android:id="@+id/markmidtexti"
             />
@@ -34,7 +34,7 @@
         <EditText android:id="@+id/crime_title"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:textSize="@dimen/medium"
+                  android:textSize="@dimen/mediumtext"
                   android:hint="Heimsækja 5 ný lönd"
                   android:layout_weight="1"
             />
@@ -43,23 +43,23 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/mediumtext"
             android:textStyle="bold"
             android:text="@string/lysamarkmid"
             android:layout_marginTop="@dimen/small"
             android:textColor="@color/colorPrimaryDark"
             />
-        <EditText android:id="@+id/crime_detail"
+        <EditText android:id="@+id/goals_description"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:textSize="@dimen/medium"
+                  android:textSize="@dimen/mediumtext"
                   android:hint="Ég vil ferðast og öðlast meiri reynslu og upplifa nýja hluti"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/mediumtext"
             android:textStyle="bold"
             android:text="Tímasettu markmiðið þitt"
             android:layout_marginTop="@dimen/small"
@@ -69,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:textSize="@dimen/medium"
+                android:textSize="@dimen/mediumtext"
                 android:drawableTint="@color/white"
                 android:layout_marginTop="@dimen/extrasmall"
                 android:drawableRight="@mipmap/ic_event_white_24dp"
@@ -88,13 +88,13 @@
                 android:layout_marginTop="@dimen/small"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/solved"
-                android:textSize="@dimen/medium"
+                android:textSize="@dimen/smalltext"
                 />
 
             <CheckBox android:id="@+id/crime_solved"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:enabled="false"
+
                       android:buttonTint="@color/colorAccent"
                       android:layout_alignParentRight="true"
                       android:layout_margin="@dimen/extrasmall"
@@ -121,8 +121,9 @@
             android:drawableRight="@mipmap/ic_mode_edit_white_48dp"
             android:backgroundTint="@color/colorAccent"
             android:textColor="@color/white"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/mediumtext"
             android:textAlignment="center"
+            android:id="@+id/changegoal"
             android:text="@string/vista"/>
     </LinearLayout>
 </LinearLayout>

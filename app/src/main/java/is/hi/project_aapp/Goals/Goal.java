@@ -5,15 +5,16 @@ package is.hi.project_aapp.Goals;
  */
 public class Goal {
     private int id;
-    private String goal;
+    private String goal, description;
     private int goalDay, goalMonth, goalYear;
     private boolean isDone;
 
     Goal(){
 
     }
-    Goal(String goal, int goalDay, int goalMonth, int goalYear, int isDone, int id){
+    Goal(String goal, String description ,int goalDay, int goalMonth, int goalYear, int isDone, int id){
         this.goal = goal;
+        this.description = description;
         this.goalDay = goalDay;
         this.goalMonth = goalMonth;
         this.goalYear = goalYear;
@@ -71,5 +72,14 @@ public class Goal {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

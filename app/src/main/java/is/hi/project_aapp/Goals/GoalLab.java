@@ -54,10 +54,7 @@ public class GoalLab {
         } finally {
             cursor.close();
         }
-        Goal goal = new Goal("testa", 1,2,2015, 0, 1);
-        Goal goal2 = new Goal("nr2", 1,2,2015, 0, 1);
-        goals.add(goal);
-        goals.add(goal2);
+
         return goals;
     }
 
@@ -81,6 +78,7 @@ public class GoalLab {
         ContentValues values = new ContentValues();
         //values.put("_id", goal.getId());
         values.put("GOAL", goal.getGoal());
+        values.put("DESCRIPTION", goal.getDescription());
         values.put("ISDONE", goal.isDone());
         values.put("GOALYEAR", goal.getGoalYear());
         values.put("GOALDAY", goal.getGoalDay());

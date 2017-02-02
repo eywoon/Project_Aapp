@@ -23,7 +23,7 @@
 
     <TextView
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
     <EditText
         android:id="@+id/name"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
 
     <TextView
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -60,7 +60,7 @@
     <EditText
         android:id="@+id/phoneno"
         android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/medium"
+        android:textSize="@dimen/mediumtext"
         android:typeface="monospace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
             android:layout_marginRight="@dimen/smallest"
             android:backgroundTint="@color/colorAccent"
             android:textColor="@color/white"
-            android:textSize="@dimen/medium"
+            android:textSize="@dimen/mediumtext"
             android:textAlignment="center"
             android:text="@string/vista"
             android:drawableLeft="@mipmap/ic_done_white_48dp"
